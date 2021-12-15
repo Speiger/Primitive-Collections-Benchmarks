@@ -30,11 +30,13 @@ allprojects {
 apply plugin: 'me.champeau.gradle.jmh'
 
 jmh {
-    include = 'speiger\\.src\\.collections\\.SetAddBenchmark.*'
+    include = 'speiger\\.src\\.collections\\.StreamReplaceFunctions.*'
     humanOutputFile = null
 	benchmarkMode = ['avgt']
     warmupIterations = 1
     iterations = 1
+    fork = 2
+    operationsPerInvocation = 5
 }
 
 // it is possible to tweak the jmhJar task directly

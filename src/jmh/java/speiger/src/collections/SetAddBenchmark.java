@@ -20,7 +20,7 @@ import speiger.src.collections.ints.sets.IntSet;
 @State(Scope.Benchmark)
 public class SetAddBenchmark
 {
-	@Param({"100", "1000", "10000", "100000"})
+	@Param({"100", "1000", "10000"})
 	public int setSize;
     
 	@Benchmark

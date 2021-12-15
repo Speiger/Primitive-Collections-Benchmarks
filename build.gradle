@@ -30,12 +30,16 @@ allprojects {
 apply plugin: 'me.champeau.gradle.jmh'
 
 jmh {
-    include = 'speiger\\.src\\.collections\\.ListBenchmarks.*'
+    include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*', 'speiger\\.src\\.collections\\.impl\\.fastUtil\\.*', 'speiger\\.src\\.collections\\.impl\\.java\\.*']
+    //'speiger\\.src\\.collections\\.*'
     humanOutputFile = null
+    resultFormat = 'json'
+	resultsFile = file("${buildDir}/reports/jmh/results.json")
     warmupIterations = 1
     iterations = 1
     fork = 2
     operationsPerInvocation = 5
+    threads = 2
 }
 
 // it is possible to tweak the jmhJar task directly

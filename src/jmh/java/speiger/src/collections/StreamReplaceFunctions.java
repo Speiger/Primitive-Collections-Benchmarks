@@ -61,4 +61,14 @@ public class StreamReplaceFunctions
 	public void queryDistinctForEach(Blackhole hole) {
 		IntArrayList.wrap(data).distinct().forEach(hole::consume);
 	}
+	
+	@Benchmark
+	public void streamDistinctFilterForEach(Blackhole hole) {
+		Arrays.stream(data).distinct().filter(T -> T % 2 != 0).forEach(hole::consume);
+	}
+	
+	@Benchmark
+	public void queryDistinctFilterForEach(Blackhole hole) {
+		IntArrayList.wrap(data).distinct().filter(T -> T % 2 != 0).forEach(hole::consume);
+	}
 }

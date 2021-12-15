@@ -5,6 +5,7 @@ plugins {
 allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'eclipse'
 
     group = 'me.champeau.sample'
     version = '1.0-SNAPSHOT'

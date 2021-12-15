@@ -30,7 +30,7 @@ allprojects {
 apply plugin: 'me.champeau.gradle.jmh'
 
 jmh {
-    include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*', 'speiger\\.src\\.collections\\.impl\\.fastUtil\\.*', 'speiger\\.src\\.collections\\.impl\\.java\\.*']
+    include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*', 'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 'speiger\\.src\\.collections\\.impl\\.java\\.*']
     //'speiger\\.src\\.collections\\.*'
     humanOutputFile = null
     resultFormat = 'json'

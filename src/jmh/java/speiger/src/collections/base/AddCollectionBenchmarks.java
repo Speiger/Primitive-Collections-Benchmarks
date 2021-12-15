@@ -16,13 +16,12 @@ import org.openjdk.jmh.annotations.State;
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @Measurement(batchSize = 1000, iterations = 10)
 @State(Scope.Benchmark)
-public abstract class ReadBenchmarks
+public abstract class AddCollectionBenchmarks
 {
 	@Param({"100", "1000", "10000"})
 	public int setSize;
 	
 	public int[] addedValues;
-	public int[] testValues;
 	
 	@Setup
 	public void init() {
@@ -31,13 +30,5 @@ public abstract class ReadBenchmarks
 		for(int i = 0;i<setSize;i++) {
 			addedValues[i] = rand.nextInt(setSize);
 		}
-		rand.setSeed(rand.nextLong());
-		testValues = new int[100];
-		for(int i = 0;i<100;i++) {
-			testValues[i] = rand.nextInt(setSize);
-		}
-		initCollections();
 	}
-	
-	protected abstract void initCollections();
 }

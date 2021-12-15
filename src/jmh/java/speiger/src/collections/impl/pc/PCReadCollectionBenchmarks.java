@@ -1,28 +1,37 @@
 package speiger.src.collections.impl.pc;
 
 import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.infra.Blackhole;
 
-import speiger.src.collections.base.ReadBenchmarks;
+import speiger.src.collections.base.ReadCollectionBenchmarks;
 import speiger.src.collections.ints.collections.IntIterator;
 import speiger.src.collections.ints.lists.IntArrayList;
 import speiger.src.collections.ints.lists.IntLinkedList;
 import speiger.src.collections.ints.lists.IntList;
+import speiger.src.collections.ints.queues.IntArrayFIFOQueue;
+import speiger.src.collections.ints.queues.IntArrayPriorityQueue;
+import speiger.src.collections.ints.queues.IntHeapPriorityQueue;
+import speiger.src.collections.ints.queues.IntPriorityDequeue;
+import speiger.src.collections.ints.queues.IntPriorityQueue;
 import speiger.src.collections.ints.sets.IntAVLTreeSet;
+import speiger.src.collections.ints.sets.IntArraySet;
 import speiger.src.collections.ints.sets.IntLinkedOpenHashSet;
 import speiger.src.collections.ints.sets.IntOpenHashSet;
 import speiger.src.collections.ints.sets.IntRBTreeSet;
 import speiger.src.collections.ints.sets.IntSet;
 
-public class PCReadBenchmarks extends ReadBenchmarks
+public class PCReadCollectionBenchmarks extends ReadCollectionBenchmarks
 {
 	IntList arrayList;
 	IntList linkedList;
 	IntSet set;
 	IntSet linkedSet;
+	IntSet arraySet;
 	IntSet rbTreeSet;
 	IntSet avlTreeSet;
+	IntPriorityDequeue fifoQueue;
+	IntPriorityQueue heapQueue;
+	IntPriorityQueue arrayQueue;
 	
 	@Override
 	protected void initCollections()
@@ -31,8 +40,12 @@ public class PCReadBenchmarks extends ReadBenchmarks
 		linkedList = new IntLinkedList(addedValues);
 		set = new IntOpenHashSet(addedValues);
 		linkedSet = new IntLinkedOpenHashSet(addedValues);
+		arraySet = new IntArraySet(addedValues);
 		rbTreeSet = new IntRBTreeSet(addedValues);
 		avlTreeSet = new IntAVLTreeSet(addedValues);
+		fifoQueue = new IntArrayFIFOQueue(addedValues);
+		heapQueue = new IntHeapPriorityQueue(addedValues);
+		arrayQueue = new IntArrayPriorityQueue(addedValues);
 	}
 	
 	@Benchmark
@@ -71,29 +84,6 @@ public class PCReadBenchmarks extends ReadBenchmarks
 	}
 	
 	@Benchmark
-	@Measurement(batchSize = 10, iterations = 1)
-	public void indexOfLinkedList(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(linkedList.indexOf(testValues[i]));
-		}
-	}
-	
-	@Benchmark
-	@Measurement(batchSize = 10, iterations = 1)
-	public void lastIndexOfLinkedList(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(linkedList.lastIndexOf(testValues[i]));
-		}
-	}
-	
-	@Benchmark
-	public void getLinkedList(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(linkedList.getInt(testValues[i]));
-		}
-	}
-	
-	@Benchmark
 	public void containsSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(set.contains(testValues[i]));
@@ -104,6 +94,13 @@ public class PCReadBenchmarks extends ReadBenchmarks
 	public void containsLinkedSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedSet.contains(testValues[i]));
+		}
+	}
+	
+	@Benchmark
+	public void containsArraySet(Blackhole hole) {
+		for(int i = 0;i<100;i++) {
+			hole.consume(arraySet.contains(testValues[i]));
 		}
 	}
 	
@@ -143,14 +140,6 @@ public class PCReadBenchmarks extends ReadBenchmarks
 	@Benchmark
 	public void iterateStreamArrayList(Blackhole hole) {
 		arrayList.primitiveStream().forEach(hole::consume);
-	}
-	
-	@Benchmark
-	@Measurement(batchSize = 10, iterations = 1)
-	public void iterateIndexLinkedList(Blackhole hole) {
-		for(int i = 0;i<Math.min(setSize, 1000);i++) {
-			hole.consume(linkedList.getInt(i));
-		}
 	}
 	
 	@Benchmark
@@ -205,6 +194,23 @@ public class PCReadBenchmarks extends ReadBenchmarks
 	}
 	
 	@Benchmark
+	public void iterateForArraySet(Blackhole hole) {
+		for(IntIterator iter = arraySet.iterator();iter.hasNext();) {
+			hole.consume(iter.nextInt());
+		}
+	}
+	
+	@Benchmark
+	public void iterateForEachArraySet(Blackhole hole) {
+		arraySet.forEach(hole::consume);
+	}
+	
+	@Benchmark
+	public void iterateStreamArraySet(Blackhole hole) {
+		arraySet.primitiveStream().forEach(hole::consume);
+	}
+	
+	@Benchmark
 	public void iterateForRBTreeSet(Blackhole hole) {
 		for(IntIterator iter = rbTreeSet.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
@@ -236,5 +242,55 @@ public class PCReadBenchmarks extends ReadBenchmarks
 	@Benchmark
 	public void iterateStreamAVLTreeSet(Blackhole hole) {
 		avlTreeSet.primitiveStream().forEach(hole::consume);
+	}
+	
+	@Benchmark
+	public int[] toArrayArrayList() {
+		return arrayList.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayLinkedList() {
+		return linkedList.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArraySet() {
+		return set.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayLinkedSet() {
+		return linkedSet.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayArraySet() {
+		return arraySet.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayRBTreeSet() {
+		return rbTreeSet.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayAVLTreeSet() {
+		return avlTreeSet.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayFIFOQueue() {
+		return fifoQueue.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayHeapQueue() {
+		return heapQueue.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayArrayQueue() {
+		return arrayQueue.toIntArray();
 	}
 }

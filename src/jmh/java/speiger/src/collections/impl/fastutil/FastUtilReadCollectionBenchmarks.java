@@ -1,23 +1,25 @@
-package speiger.src.collections.impl.fastUtil;
+package speiger.src.collections.impl.fastutil;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.infra.Blackhole;
 
 import it.unimi.dsi.fastutil.ints.IntAVLTreeSet;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntArraySet;
 import it.unimi.dsi.fastutil.ints.IntIterator;
 import it.unimi.dsi.fastutil.ints.IntLinkedOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntRBTreeSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
-import speiger.src.collections.base.ReadBenchmarks;
+import speiger.src.collections.base.ReadCollectionBenchmarks;
 
-public class FastUtilReadBenchmarks extends ReadBenchmarks
+public class FastUtilReadCollectionBenchmarks extends ReadCollectionBenchmarks
 {
 	IntList arrayList;
 	IntSet set;
 	IntSet linkedSet;
+	IntSet arraySet;
 	IntSet rbTreeSet;
 	IntSet avlTreeSet;
 	
@@ -27,6 +29,7 @@ public class FastUtilReadBenchmarks extends ReadBenchmarks
 		arrayList = new IntArrayList(addedValues);
 		set = new IntOpenHashSet(addedValues);
 		linkedSet = new IntLinkedOpenHashSet(addedValues);
+		arraySet = new IntArraySet(addedValues);
 		rbTreeSet = new IntRBTreeSet(addedValues);
 		avlTreeSet = new IntAVLTreeSet(addedValues);
 	}
@@ -70,6 +73,13 @@ public class FastUtilReadBenchmarks extends ReadBenchmarks
 	public void containsLinkedSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedSet.contains(testValues[i]));
+		}
+	}
+	
+	@Benchmark
+	public void containsArraySet(Blackhole hole) {
+		for(int i = 0;i<100;i++) {
+			hole.consume(arraySet.contains(testValues[i]));
 		}
 	}
 	
@@ -146,6 +156,23 @@ public class FastUtilReadBenchmarks extends ReadBenchmarks
 	}
 	
 	@Benchmark
+	public void iterateForArraySet(Blackhole hole) {
+		for(IntIterator iter = arraySet.iterator();iter.hasNext();) {
+			hole.consume(iter.nextInt());
+		}
+	}
+	
+	@Benchmark
+	public void iterateForEachArraySet(Blackhole hole) {
+		arraySet.forEach(hole::consume);
+	}
+	
+	@Benchmark
+	public void iterateStreamArraySet(Blackhole hole) {
+		arraySet.intStream().forEach(hole::consume);
+	}
+	
+	@Benchmark
 	public void iterateForRBTreeSet(Blackhole hole) {
 		for(IntIterator iter = rbTreeSet.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
@@ -177,5 +204,35 @@ public class FastUtilReadBenchmarks extends ReadBenchmarks
 	@Benchmark
 	public void iterateStreamAVLTreeSet(Blackhole hole) {
 		avlTreeSet.intStream().forEach(hole::consume);
+	}
+	
+	@Benchmark
+	public int[] toArrayArrayList() {
+		return arrayList.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArraySet() {
+		return set.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayLinkedSet() {
+		return linkedSet.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayArraySet() {
+		return arraySet.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayRBTreeSet() {
+		return rbTreeSet.toIntArray();
+	}
+	
+	@Benchmark
+	public int[] toArrayAVLTreeSet() {
+		return avlTreeSet.toIntArray();
 	}
 }

@@ -1,21 +1,22 @@
-package speiger.src.collections.impl.pc;
+package speiger.src.collections.impl.fastutil;
 
 import org.openjdk.jmh.annotations.Benchmark;
 
-import speiger.src.collections.base.AddBenchmarks;
-import speiger.src.collections.ints.lists.IntArrayList;
-import speiger.src.collections.ints.lists.IntLinkedList;
-import speiger.src.collections.ints.lists.IntList;
-import speiger.src.collections.ints.queues.IntArrayPriorityQueue;
-import speiger.src.collections.ints.queues.IntHeapPriorityQueue;
-import speiger.src.collections.ints.queues.IntPriorityQueue;
-import speiger.src.collections.ints.sets.IntAVLTreeSet;
-import speiger.src.collections.ints.sets.IntLinkedOpenHashSet;
-import speiger.src.collections.ints.sets.IntOpenHashSet;
-import speiger.src.collections.ints.sets.IntRBTreeSet;
-import speiger.src.collections.ints.sets.IntSet;
+import it.unimi.dsi.fastutil.ints.IntAVLTreeSet;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntArrayPriorityQueue;
+import it.unimi.dsi.fastutil.ints.IntArraySet;
+import it.unimi.dsi.fastutil.ints.IntHeapPriorityQueue;
+import it.unimi.dsi.fastutil.ints.IntLinkedOpenHashSet;
+import it.unimi.dsi.fastutil.ints.IntList;
+import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import it.unimi.dsi.fastutil.ints.IntPriorityQueue;
+import it.unimi.dsi.fastutil.ints.IntRBTreeSet;
+import it.unimi.dsi.fastutil.ints.IntSet;
+import speiger.src.collections.base.AddCollectionBenchmarks;
 
-public class PCAddBenchmarks extends AddBenchmarks
+
+public class FastUtilAddCollectionBenchmarks extends AddCollectionBenchmarks
 {
 	@Benchmark
 	public IntList addList() {
@@ -29,15 +30,6 @@ public class PCAddBenchmarks extends AddBenchmarks
 	@Benchmark
 	public IntList addEmptyList() {
 	    IntList result = new IntArrayList();
-	    for(int i = 0; i < setSize; i++) {
-	        result.add(addedValues[i]);
-	    }
-	    return result;
-	}
-	
-	@Benchmark
-	public IntList addLinkedList() {
-	    IntList result = new IntLinkedList();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
 	    }
@@ -81,6 +73,24 @@ public class PCAddBenchmarks extends AddBenchmarks
 	}
 	
 	@Benchmark
+	public IntSet addArraySetBenchmark() {
+	    IntSet result = new IntArraySet(setSize);
+	    for(int i = 0; i < setSize; i++) {
+	        result.add(addedValues[i]);
+	    }
+	    return result;
+	}
+	
+	@Benchmark
+	public IntSet addEmptyArraySetBenchmark() {
+	    IntSet result = new IntArraySet();
+	    for(int i = 0; i < setSize; i++) {
+	        result.add(addedValues[i]);
+	    }
+	    return result;
+	}
+	
+	@Benchmark
 	public IntSet addRBTreeSetBenchmark() {
 	    IntSet result = new IntRBTreeSet();
 	    for(int i = 0; i < setSize; i++) {
@@ -99,7 +109,7 @@ public class PCAddBenchmarks extends AddBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addArrayQueueBenchmark() {
+	public IntPriorityQueue addFIFOQueueBenchmark() {
 		IntPriorityQueue result = new IntArrayPriorityQueue(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
@@ -108,7 +118,7 @@ public class PCAddBenchmarks extends AddBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addEmptyArrayQueueBenchmark() {
+	public IntPriorityQueue addEmptyFIFOQueueBenchmark() {
 		IntPriorityQueue result = new IntArrayPriorityQueue();
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
@@ -135,7 +145,7 @@ public class PCAddBenchmarks extends AddBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addSortedArrayQueueBenchmark() {
+	public IntPriorityQueue addArrayQueueBenchmark() {
 		IntPriorityQueue result = new IntArrayPriorityQueue(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
@@ -144,7 +154,7 @@ public class PCAddBenchmarks extends AddBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addEmptySortedArrayQueueBenchmark() {
+	public IntPriorityQueue addEmptyArrayQueueBenchmark() {
 		IntPriorityQueue result = new IntArrayPriorityQueue();
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);

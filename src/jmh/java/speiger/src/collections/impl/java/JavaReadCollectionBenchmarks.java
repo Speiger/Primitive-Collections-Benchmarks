@@ -11,12 +11,11 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.infra.Blackhole;
 
-import speiger.src.collections.base.ReadBenchmarks;
+import speiger.src.collections.base.ReadCollectionBenchmarks;
 
-public class JavaReadBenchmarks extends ReadBenchmarks
+public class JavaReadCollectionBenchmarks extends ReadCollectionBenchmarks
 {
 	List<Integer> arrayList;
 	List<Integer> linkedList;
@@ -81,30 +80,6 @@ public class JavaReadBenchmarks extends ReadBenchmarks
 	}
 	
 	@Benchmark
-	@Measurement(batchSize = 100, iterations = 1)
-	public void indexOfLinkedList(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(linkedList.indexOf(testValues[i]));
-		}
-	}
-	
-	@Benchmark
-	@Measurement(batchSize = 100, iterations = 1)
-	public void lastIndexOfLinkedList(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(linkedList.lastIndexOf(testValues[i]));
-		}
-	}
-	
-	@Benchmark
-	@Measurement(batchSize = 10, iterations = 1)
-	public void getLinkedList(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(linkedList.get(testValues[i]));
-		}
-	}
-	
-	@Benchmark
 	public void containsSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(set.contains(testValues[i]));
@@ -154,14 +129,6 @@ public class JavaReadBenchmarks extends ReadBenchmarks
 	@Benchmark
 	public void iterateStreamArrayList(Blackhole hole) {
 		arrayList.stream().forEach(hole::consume);
-	}
-	
-	@Benchmark
-	@Measurement(batchSize = 10, iterations = 1)
-	public void iterateIndexLinkedList(Blackhole hole) {
-		for(int i = 0;i<Math.min(setSize, 1000);i++) {
-			hole.consume(linkedList.get(i));
-		}
 	}
 	
 	@Benchmark
@@ -230,5 +197,35 @@ public class JavaReadBenchmarks extends ReadBenchmarks
 	@Benchmark
 	public void iterateStreamTreeSet(Blackhole hole) {
 		treeSet.stream().forEach(hole::consume);
+	}
+	
+	@Benchmark
+	public Integer[] toArrayArrayList() {
+		return arrayList.toArray(new Integer[arrayList.size()]);
+	}
+	
+	@Benchmark
+	public Integer[] toArrayLinkedList() {
+		return linkedList.toArray(new Integer[linkedList.size()]);
+	}
+	
+	@Benchmark
+	public Integer[] toArraySet() {
+		return set.toArray(new Integer[set.size()]);
+	}
+	
+	@Benchmark
+	public Integer[] toArrayLinkedSet() {
+		return linkedSet.toArray(new Integer[linkedSet.size()]);
+	}
+	
+	@Benchmark
+	public Integer[] toArrayTreeSet() {
+		return treeSet.toArray(new Integer[treeSet.size()]);
+	}
+	
+	@Benchmark
+	public Integer[] toArrayFIFOQueue() {
+		return dequeue.toArray(new Integer[dequeue.size()]);
 	}
 }

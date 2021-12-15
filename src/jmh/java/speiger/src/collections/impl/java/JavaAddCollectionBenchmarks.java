@@ -12,9 +12,9 @@ import java.util.TreeSet;
 
 import org.openjdk.jmh.annotations.Benchmark;
 
-import speiger.src.collections.base.AddBenchmarks;
+import speiger.src.collections.base.AddCollectionBenchmarks;
 
-public class JavaAddBenchmarks extends AddBenchmarks
+public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 {
 	@Benchmark
 	public List<Integer> addList() {
@@ -89,7 +89,7 @@ public class JavaAddBenchmarks extends AddBenchmarks
 	}
 	
 	@Benchmark
-	public Deque<Integer> addArrayQueueBenchmark() {
+	public Deque<Integer> addFIFOQueueBenchmark() {
 		Deque<Integer> result = new ArrayDeque<>(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -98,7 +98,7 @@ public class JavaAddBenchmarks extends AddBenchmarks
 	}
 	
 	@Benchmark
-	public Deque<Integer> addEmptyArrayQueueBenchmark() {
+	public Deque<Integer> addEmptyFIFOQueueBenchmark() {
 		Deque<Integer> result = new ArrayDeque<>();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);

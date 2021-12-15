@@ -21,6 +21,8 @@ allprojects {
     }
     dependencies {
     	compile 'de.speiger:Primitive-Collections:0.5.1'
+    	compile 'it.unimi.dsi:fastutil:8.5.6'
+    	compile 'org.eclipse.collections:eclipse-collections:11.0.0'
 	}
 }
 
@@ -28,9 +30,9 @@ allprojects {
 apply plugin: 'me.champeau.gradle.jmh'
 
 jmh {
-    include = 'speiger\\.src\\.collections\\.Test.*'
+    include = 'speiger\\.src\\.collections\\.SetAddBenchmark.*'
     humanOutputFile = null
-	benchmarkMode = ['all']
+	benchmarkMode = ['avgt']
     warmupIterations = 1
     iterations = 1
 }

@@ -92,14 +92,14 @@ public class JavaRemoveMapBenchmarks extends RemoveMapBenchmarks
 	
 	@Benchmark
 	public void pollFirstTreeMap(Blackhole hole) {
-		while(!treeMap.isEmpty()) {
+		for(int i = 0,m=treeMap.size();i<m;i++) {
 			hole.consume(treeMap.pollFirstEntry());
 		}
 	}
 	
 	@Benchmark
 	public void pollLastTreeMap(Blackhole hole) {
-		while(!treeMap.isEmpty()) {
+		for(int i = 0,m=treeMap.size();i<m;i++) {
 			hole.consume(treeMap.pollLastEntry());
 		}
 	}

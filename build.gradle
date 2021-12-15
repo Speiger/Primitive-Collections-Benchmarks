@@ -39,7 +39,7 @@ jmh {
     iterations = 1
     fork = 2
     operationsPerInvocation = 5
-    threads = 2
+    threads = 1
 }
 
 // it is possible to tweak the jmhJar task directly

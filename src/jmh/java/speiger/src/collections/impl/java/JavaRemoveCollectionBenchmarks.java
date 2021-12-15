@@ -116,14 +116,14 @@ public class JavaRemoveCollectionBenchmarks extends RemoveCollectionBenchmarks
 	
 	@Benchmark
 	public void pollFirstFIFOQueue(Blackhole hole) {
-		while(!dequeue.isEmpty()) {
+		for(int i = 0,m=dequeue.size();i<m;i++) {
 			hole.consume(dequeue.pollFirst());
 		}
 	}
 	
 	@Benchmark
 	public void pollLastFIFOQueue(Blackhole hole) {
-		while(!dequeue.isEmpty()) {
+		for(int i = 0,m=dequeue.size();i<m;i++) {
 			hole.consume(dequeue.pollLast());
 		}
 	}

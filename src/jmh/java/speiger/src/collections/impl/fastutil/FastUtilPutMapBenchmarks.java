@@ -1,5 +1,7 @@
 package speiger.src.collections.impl.fastutil;
 
+import org.openjdk.jmh.annotations.Benchmark;
+
 import it.unimi.dsi.fastutil.ints.Int2DoubleAVLTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2DoubleArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2DoubleLinkedOpenHashMap;
@@ -10,6 +12,7 @@ import speiger.src.collections.base.PutMapBenchmarks;
 
 public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 {
+	@Benchmark
 	public Int2DoubleMap putMap() {
 		Int2DoubleMap map = new Int2DoubleOpenHashMap(setSize);
 		for(int i = 0;i<setSize;i++) {
@@ -18,6 +21,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 		return map;
 	}
 	
+	@Benchmark
 	public Int2DoubleMap putEmptyMap() {
 		Int2DoubleMap map = new Int2DoubleOpenHashMap();
 		for(int i = 0;i<setSize;i++) {
@@ -26,6 +30,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 		return map;
 	}
 	
+	@Benchmark
 	public Int2DoubleMap putLinkedMap() {
 		Int2DoubleMap map = new Int2DoubleLinkedOpenHashMap(setSize);
 		for(int i = 0;i<setSize;i++) {
@@ -34,6 +39,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 		return map;
 	}
 	
+	@Benchmark
 	public Int2DoubleMap putEmptyLinkedMap() {
 		Int2DoubleMap map = new Int2DoubleLinkedOpenHashMap();
 		for(int i = 0;i<setSize;i++) {
@@ -42,6 +48,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 		return map;
 	}
 	
+	@Benchmark
 	public Int2DoubleMap putArrayMap() {
 		Int2DoubleMap map = new Int2DoubleArrayMap(setSize);
 		for(int i = 0;i<setSize;i++) {
@@ -50,6 +57,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 		return map;
 	}
 	
+	@Benchmark
 	public Int2DoubleMap putEmptyArrayMap() {
 		Int2DoubleMap map = new Int2DoubleArrayMap();
 		for(int i = 0;i<setSize;i++) {
@@ -58,6 +66,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 		return map;
 	}
 	
+	@Benchmark
 	public Int2DoubleMap putRBTreeMap() {
 		Int2DoubleMap map = new Int2DoubleRBTreeMap();
 		for(int i = 0;i<setSize;i++) {
@@ -66,6 +75,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 		return map;
 	}
 	
+	@Benchmark
 	public Int2DoubleMap putAVLTreeMap() {
 		Int2DoubleMap map = new Int2DoubleAVLTreeMap();
 		for(int i = 0;i<setSize;i++) {

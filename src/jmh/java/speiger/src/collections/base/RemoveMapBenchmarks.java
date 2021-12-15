@@ -29,6 +29,7 @@ public abstract class RemoveMapBenchmarks
 	@Setup
 	public void init() {
 		addedKeys = new int[setSize];
+		addedValues = new double[setSize];
 		Random rand = new Random(1210438692124L);
 		for(int i = 0;i<setSize;i++) {
 			addedKeys[i] = rand.nextInt(setSize);

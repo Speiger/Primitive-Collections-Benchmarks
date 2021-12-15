@@ -202,52 +202,52 @@ public class FastUtilReadMapBenchmarks extends ReadMapBenchmarks
 	}
 	
 	@Benchmark
-	public void keySetEachMap(Blackhole hole) {
+	public void keySetMap(Blackhole hole) {
 		for(IntIterator iter = map.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetEachLinkedMap(Blackhole hole) {
+	public void keySetLinkedMap(Blackhole hole) {
 		for(IntIterator iter = linkedMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetEachArrayMap(Blackhole hole) {
+	public void keySetArrayMap(Blackhole hole) {
 		for(IntIterator iter = arrayMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetEachRBTreeMap(Blackhole hole) {
+	public void keySetRBTreeMap(Blackhole hole) {
 		for(IntIterator iter = rbTreeMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetEachAVLTreeMap(Blackhole hole) {
+	public void keySetAVLTreeMap(Blackhole hole) {
 		for(IntIterator iter = avlTreeMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void valuesEachMap(Blackhole hole) {
+	public void valuesMap(Blackhole hole) {
 		for(DoubleIterator iter = map.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesEachLinkedMap(Blackhole hole) {
+	public void valuesLinkedMap(Blackhole hole) {
 		for(DoubleIterator iter = linkedMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesEachArrayMap(Blackhole hole) {
+	public void valuesArrayMap(Blackhole hole) {
 		for(DoubleIterator iter = arrayMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesEachRBTreeMap(Blackhole hole) {
+	public void valuesRBTreeMap(Blackhole hole) {
 		for(DoubleIterator iter = rbTreeMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesEachAVLTreeMap(Blackhole hole) {
+	public void valuesAVLTreeMap(Blackhole hole) {
 		for(DoubleIterator iter = avlTreeMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 }

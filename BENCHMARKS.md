@@ -1,7 +1,7 @@
 ## Benchmarks
 
 ### Info
-Benchmarks were made using Jmh version 1.25 and Java OpenJDK 8 version 275-1
+Benchmarks were made using Jmh version 1.25 and Java OpenJDK 8 version 275-1 and Primitive Collections 0.5.2 and FastUtil 8.5.6
 The results may differ for each JVM.
 
 Each benchmark was created using SingleShotTime and BatchSizes of 1000 with 10 iterations

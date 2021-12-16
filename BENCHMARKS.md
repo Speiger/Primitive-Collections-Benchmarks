@@ -92,7 +92,7 @@ Now to the Benchmarks
 |  toArray          |   10000  |   90.329,6    |        N/A       |     38.176,1    | us/op |
 
 ### FIFO Queue
-|    Action   |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|    Action   |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |-------------|----------|--------------|------------------|-----------------|-------|
 |  addEmpty   |     100  |   3.802,0    |      3.247,8     |      2.419,95   | us/op |
 |  addEmpty   |    1000  |  21.157,35   |     15.218,9     |     13.374,15   | us/op |
@@ -114,7 +114,7 @@ Now to the Benchmarks
 |  toArray    |   10000  |  45.144,4    |        N/A       |     20.392,45   | us/op |
 
 ### ArrayPriorityQueue
-|   Action   |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|   Action   |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |------------|----------|--------------|------------------|-----------------|-------|
 |  add       |     100  |     N/A      |      2.072,5     |      2.051,45   | us/op |
 |  add       |    1000  |     N/A      |      9.487,2     |      9.225,55   | us/op |
@@ -133,7 +133,7 @@ Now to the Benchmarks
 |  toArray   |   10000  |     N/A      |        N/A       |     19.567,45   | us/op |
 
 ### HeapPriorityQueue
-|   Action   |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|   Action   |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |------------|----------|--------------|------------------|-----------------|-------|
 |  addEmpty  |     100  |     N/A      |      3.900,35    |      4.394,05   | us/op |
 |  addEmpty  |    1000  |     N/A      |     20.754,15    |     20.954,85   | us/op |
@@ -152,7 +152,7 @@ Now to the Benchmarks
 |  toArray   |   10000  |     N/A      |        N/A       |     20.129,7    | us/op |
 
 ### ArraySet
-|      Action      |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|      Action      |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |------------------|----------|--------------|------------------|-----------------|-------|
 |  add             |     100  |     N/A      |      4.882,1     |      3.742,2    | us/op |
 |  add             |    1000  |     N/A      |    196.601,3     |     75.662,95   | us/op |
@@ -177,7 +177,7 @@ Now to the Benchmarks
 |  toArray         |   10000  |     N/A      |     19.083,05    |     12.615,35   | us/op |
 
 ### HashSet
-|      Action      |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|      Action      |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |------------------|----------|--------------|------------------|-----------------|-------|
 |  addEmpty        |     100  |   8.407,25   |      9.458,95    |     10.221,2    | us/op |
 |  addEmpty        |    1000  |  45.939,55   |     23.250,2     |     23.275,2    | us/op |
@@ -205,7 +205,7 @@ Now to the Benchmarks
 |  toArray         |   10000  |  89.872,25   |     77.768,05    |     79.211,55   | us/op |
 
 ### LinkedHashSet
-|      Action      |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|      Action      |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |------------------|----------|--------------|------------------|-----------------|-------|
 |  addEmpty        |     100  |   9.430,3    |      9.846,55    |     11.930,05   | us/op |
 |  addEmpty        |    1000  |  53.706,95   |     35.949,3     |     42.672,1    | us/op |
@@ -233,7 +233,7 @@ Now to the Benchmarks
 |  toArray         |   10000  |  84.635,65   |     47.663,2     |     48.841,45   | us/op |
 
 ### AVLTreeSet
-|      Action      |   Size   |  java Score   |  fastutil Score  |    pc Score     | Units |
+|      Action      |   Size   |  Java Score   |  FastUtil Score  |    PC Score     | Units |
 |------------------|----------|---------------|------------------|-----------------|-------|
 |  add             |     100  |   11.662,8    |     16.084,6     |     12.861,8    | us/op |
 |  add             |    1000  |  100.301,6    |    123.940,7     |     97.217,05   | us/op |
@@ -264,7 +264,7 @@ Now to the Benchmarks
 |  toArray         |   10000  |  167.791,6    |     66.565,1     |     73.323,25   | us/op |
 
 ### RBTreeSet
-|      Action      |   Size   |  Java Score   |  fastutil Score  |    pc Score     | Units |
+|      Action      |   Size   |  Java Score   |  FastUtil Score  |    PC Score     | Units |
 |------------------|----------|---------------|------------------|-----------------|-------|
 |  add             |     100  |   11.662,8    |     16.572,0     |     12.729,8    | us/op |
 |  add             |    1000  |  100.301,6    |    116.382,7     |     77.347,15   | us/op |
@@ -295,7 +295,7 @@ Now to the Benchmarks
 |  toArray         |   10000  |  167.791,6    |     69.611,75    |     74.448,25   | us/op |
 
 ### HashMap
-|     Action     |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|     Action     |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |----------------|----------|--------------|------------------|-----------------|-------|
 |  putEmpty      |     100  |   8.607,85   |     11.217,05    |     10.561,5    | us/op |
 |  putEmpty      |    1000  |  58.514,5    |     34.211,95    |     30.514,65   | us/op |
@@ -332,7 +332,7 @@ Now to the Benchmarks
 |  values        |   10000  | 103.829,15   |    106.984,5     |    124.475,6    | us/op |
 
 ### LinkedHashMap
-|     Action     |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|     Action     |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |----------------|----------|--------------|------------------|-----------------|-------|
 |  putEmpty      |     100  |  11.416,35   |     12.216,45    |     13.248,15   | us/op |
 |  putEmpty      |    1000  |  65.484,7    |     46.935,5     |     43.765,65   | us/op |
@@ -369,7 +369,7 @@ Now to the Benchmarks
 |  values        |   10000  |  74.349,7    |     44.881,55    |     41.338,2    | us/op |
 
 ### ArrayMap
-|     Action     |   Size   |  java Score  |  fastutil Score  |    pc Score     | Units |
+|     Action     |   Size   |  Java Score  |  FastUtil Score  |    PC Score     | Units |
 |----------------|----------|--------------|------------------|-----------------|-------|
 |  put           |     100  |     N/A      |      5.159,4     |      7.568,05   | us/op |
 |  put           |    1000  |     N/A      |    157.628,1     |     91.957,75   | us/op |
@@ -406,7 +406,7 @@ Now to the Benchmarks
 |  values        |   10000  |     N/A      |     41.697,65    |     28.726,6    | us/op |
 
 ### AVLTreeMap
-|     Action     |   Size   |  java Score   |  fastutil Score  |    pc Score     | Units |
+|     Action     |   Size   |  Java Score   |  FastUtil Score  |    PC Score     | Units |
 |----------------|----------|---------------|------------------|-----------------|-------|
 |  put           |     100  |   13.180,25   |     16.246,65    |     13.355,65   | us/op |
 |  put           |    1000  |  115.613,0    |    125.029,85    |     96.677,45   | us/op |
@@ -446,7 +446,7 @@ Now to the Benchmarks
 |  values        |   10000  |  154.618,3    |     76.131,1     |     86.412,55   | us/op |
 
 ### RBTreeMap
-|     Action     |   Size   |  java Score   |  fastutil Score  |    pc Score     | Units |
+|     Action     |   Size   |  Java Score   |  FastUtil Score  |    PC Score     | Units |
 |----------------|----------|---------------|------------------|-----------------|-------|
 |  put           |     100  |   13.180,25   |     16.798,3     |     12.897,2    | us/op |
 |  put           |    1000  |  115.613,0    |    118.766,6     |     82.362,2    | us/op |

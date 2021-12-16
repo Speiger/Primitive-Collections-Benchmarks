@@ -50,19 +50,19 @@ public class FastUtilRemoveMapsBenchmarks extends RemoveMapBenchmarks
 		}
 	}
 	
-//	@Benchmark
-//	public void removeRBTreeMap(Blackhole hole) {
-//		for(int i = 0;i<removeKeys.length;i++) {
-//			hole.consume(rbTreeMap.remove(removeKeys[i])); //Was Causing a freeze thats why disabled
-//		}
-//	}
-//	
-//	@Benchmark
-//	public void removeAVLMap(Blackhole hole) {
-//		for(int i = 0;i<removeKeys.length;i++) {
-//			hole.consume(avlTreeMap.remove(removeKeys[i])); //Was Causing a freeze thats why disabled
-//		}
-//	}
+	@Benchmark
+	public void removeRBTreeMap(Blackhole hole) {
+		for(int i = 0;i<removeKeys.length;i++) {
+			hole.consume(rbTreeMap.remove(removeKeys[i])); //Was Causing a freeze thats why disabled
+		}
+	}
+	
+	@Benchmark
+	public void removeAVLMap(Blackhole hole) {
+		for(int i = 0;i<removeKeys.length;i++) {
+			hole.consume(avlTreeMap.remove(removeKeys[i])); //Was Causing a freeze thats why disabled
+		}
+	}
 	
 	@Benchmark
 	public void replaceMap(Blackhole hole) {

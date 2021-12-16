@@ -20,7 +20,7 @@ allprojects {
     	}
     }
     dependencies {
-    	compile 'de.speiger:Primitive-Collections:0.5.1'
+    	compile 'de.speiger:Primitive-Collections:0.5.2-SNAPSHOT-2'
     	compile 'it.unimi.dsi:fastutil:8.5.6'
     	compile 'org.eclipse.collections:eclipse-collections:11.0.0'
 	}
@@ -30,11 +30,11 @@ allprojects {
 apply plugin: 'me.champeau.gradle.jmh'
 
 jmh {
-    include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*', 'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 'speiger\\.src\\.collections\\.impl\\.java\\.*']
+    include = ['speiger\\.src\\.collections\\.*', 'speiger\\.src\\.collections\\.impl\\.pc\\.*', 'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 'speiger\\.src\\.collections\\.impl\\.java\\.*']
     //'speiger\\.src\\.collections\\.*'
     humanOutputFile = null
-    resultFormat = 'json'
-	resultsFile = file("${buildDir}/reports/jmh/results.json")
+//    resultFormat = 'json'
+//	resultsFile = file("${buildDir}/reports/jmh/results.json")
     warmupIterations = 1
     iterations = 1
     fork = 2

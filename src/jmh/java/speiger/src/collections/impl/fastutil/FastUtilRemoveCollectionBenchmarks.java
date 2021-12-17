@@ -26,7 +26,7 @@ public class FastUtilRemoveCollectionBenchmarks extends RemoveCollectionBenchmar
 	IntSet arraySet;
 	IntSet rbTreeSet;
 	IntSet avlTreeSet;
-	IntPriorityQueue fifoQueue;
+	IntArrayFIFOQueue fifoQueue;
 	IntPriorityQueue heapQueue;
 	IntPriorityQueue arrayQueue;
 	
@@ -48,56 +48,63 @@ public class FastUtilRemoveCollectionBenchmarks extends RemoveCollectionBenchmar
 	}
 	
 	@Benchmark
-	public void removeArrayList() {
+	public void removeResultArrayList() {
 		for(int i = 0;i<100;i++) {
 			arrayList.rem(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void removeSet() {
+	public void removeResultHashSet() {
 		for(int i = 0;i<100;i++) {
 			set.remove(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void removeLinkedSet() {
+	public void removeResultLinkedHashSet() {
 		for(int i = 0;i<100;i++) {
 			linkedSet.remove(removeValues[i]);
 		}
 	}
 	
 //	@Benchmark
-//	public void removeRBTreeSet() {
+//	public void removeResultRBTreeSet() {
 //		for(int i = 0;i<100;i++) {
 //			rbTreeSet.remove(removeValues[i]); //Was Causing a freeze thats why disabled
 //		}
 //	}
 //	
 //	@Benchmark
-//	public void removeAVLTreeSet() {
+//	public void removeResultAVLTreeSet() {
 //		for(int i = 0;i<100;i++) {
 //			avlTreeSet.remove(removeValues[i]); //Was Causing a freeze thats why disabled
 //		}
 //	}
 	
 	@Benchmark
-	public void pollFirstFIFOQueue(Blackhole hole) {
+	public void pollFirstResultFIFOQueue(Blackhole hole) {
 		while(!fifoQueue.isEmpty()) {
 			hole.consume(fifoQueue.dequeueInt());
 		}
 	}
 	
 	@Benchmark
-	public void pollHeapQueue(Blackhole hole) {
+	public void pollLastResultFIFOQueue(Blackhole hole) {
+		while(!fifoQueue.isEmpty()) {
+			hole.consume(fifoQueue.dequeueLastInt());
+		}
+	}
+	
+	@Benchmark
+	public void pollResultHeapQueue(Blackhole hole) {
 		while(!heapQueue.isEmpty()) {
 			hole.consume(heapQueue.dequeueInt());
 		}
 	}
 	
 	@Benchmark
-	public void pollArrayQueue(Blackhole hole) {
+	public void pollResultArrayQueue(Blackhole hole) {
 		while(!arrayQueue.isEmpty()) {
 			hole.consume(arrayQueue.dequeueInt());
 		}

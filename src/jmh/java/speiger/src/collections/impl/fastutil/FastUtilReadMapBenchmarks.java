@@ -32,137 +32,137 @@ public class FastUtilReadMapBenchmarks extends ReadMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap cloneMap() {
+	public Int2DoubleMap cloneResultHashMap() {
 		return ((Int2DoubleOpenHashMap)map).clone();
 	}
 	
 	@Benchmark
-	public Int2DoubleMap cloneLinkedMap() {
+	public Int2DoubleMap cloneResultLinkedHashMap() {
 		return ((Int2DoubleLinkedOpenHashMap)linkedMap).clone();
 	}
 	
 	@Benchmark
-	public Int2DoubleMap cloneArrayMap() {
+	public Int2DoubleMap cloneResultArrayMap() {
 		return ((Int2DoubleArrayMap)arrayMap).clone();
 	}
 	
 	@Benchmark
-	public Int2DoubleMap cloneRBTreeMap() {
+	public Int2DoubleMap cloneResultRBTreeMap() {
 		return ((Int2DoubleRBTreeMap)rbTreeMap).clone();
 	}
 	
 	@Benchmark
-	public Int2DoubleMap cloneAVLMap() {
+	public Int2DoubleMap cloneResultAVLTreeMap() {
 		return ((Int2DoubleAVLTreeMap)avlTreeMap).clone();
 	}
 	
 	@Benchmark
-	public void containsKeyMap(Blackhole hole) {
+	public void containsKeyResultHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(map.containsKey(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsKeyLinkedMap(Blackhole hole) {
+	public void containsKeyResultLinkedHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedMap.containsKey(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsKeyArrayMap(Blackhole hole) {
+	public void containsKeyResultArrayMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arrayMap.containsKey(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsKeyRBTreeMap(Blackhole hole) {
+	public void containsKeyResultRBTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(rbTreeMap.containsKey(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsKeyAVLTreeMap(Blackhole hole) {
+	public void containsKeyResultAVLTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(avlTreeMap.containsKey(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void getMap(Blackhole hole) {
+	public void getResultHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(map.get(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void getLinkedMap(Blackhole hole) {
+	public void getResultLinkedHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedMap.get(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void getArrayMap(Blackhole hole) {
+	public void getResultArrayMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arrayMap.get(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void getRBTreeMap(Blackhole hole) {
+	public void getResultRBTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(rbTreeMap.get(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void getAVLTreeMap(Blackhole hole) {
+	public void getResultAVLTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(avlTreeMap.get(testKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void getOrDefaultMap(Blackhole hole) {
+	public void getOrDefaultResultHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(map.getOrDefault(testKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void getOrDefaultLinkedMap(Blackhole hole) {
+	public void getOrDefaultResultLinkedHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedMap.getOrDefault(testKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void getOrDefaultArrayMap(Blackhole hole) {
+	public void getOrDefaultResultArrayMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arrayMap.getOrDefault(testKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void getOrDefaultRBTreeMap(Blackhole hole) {
+	public void getOrDefaultResultRBTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(rbTreeMap.getOrDefault(testKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void getOrDefaultAVLTreeMap(Blackhole hole) {
+	public void getOrDefaultResultAVLTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(avlTreeMap.getOrDefault(testKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void forEachMap(Blackhole hole) {
+	public void forEachResultHashMap(Blackhole hole) {
 		map.forEach((K, V) -> {
 			hole.consume(K);
 			hole.consume(V);
@@ -170,7 +170,7 @@ public class FastUtilReadMapBenchmarks extends ReadMapBenchmarks
 	}
 	
 	@Benchmark
-	public void forEachLinkedMap(Blackhole hole) {
+	public void forEachResultLinkedHashMap(Blackhole hole) {
 		linkedMap.forEach((K, V) -> {
 			hole.consume(K);
 			hole.consume(V);
@@ -178,7 +178,7 @@ public class FastUtilReadMapBenchmarks extends ReadMapBenchmarks
 	}
 	
 	@Benchmark
-	public void forEachArrayMap(Blackhole hole) {
+	public void forEachResultArrayMap(Blackhole hole) {
 		arrayMap.forEach((K, V) -> {
 			hole.consume(K);
 			hole.consume(V);
@@ -186,7 +186,7 @@ public class FastUtilReadMapBenchmarks extends ReadMapBenchmarks
 	}
 	
 	@Benchmark
-	public void forEachRBTreeMap(Blackhole hole) {
+	public void forEachResultRBTreeMap(Blackhole hole) {
 		rbTreeMap.forEach((K, V) -> {
 			hole.consume(K);
 			hole.consume(V);
@@ -194,7 +194,7 @@ public class FastUtilReadMapBenchmarks extends ReadMapBenchmarks
 	}
 	
 	@Benchmark
-	public void forEachAVLTreeMap(Blackhole hole) {
+	public void forEachResultAVLTreeMap(Blackhole hole) {
 		avlTreeMap.forEach((K, V) -> {
 			hole.consume(K);
 			hole.consume(V);
@@ -202,52 +202,52 @@ public class FastUtilReadMapBenchmarks extends ReadMapBenchmarks
 	}
 	
 	@Benchmark
-	public void keySetMap(Blackhole hole) {
+	public void keySetResultHashMap(Blackhole hole) {
 		for(IntIterator iter = map.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetLinkedMap(Blackhole hole) {
+	public void keySetResultLinkedHashMap(Blackhole hole) {
 		for(IntIterator iter = linkedMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetArrayMap(Blackhole hole) {
+	public void keySetResultArrayMap(Blackhole hole) {
 		for(IntIterator iter = arrayMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetRBTreeMap(Blackhole hole) {
+	public void keySetResultRBTreeMap(Blackhole hole) {
 		for(IntIterator iter = rbTreeMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void keySetAVLTreeMap(Blackhole hole) {
+	public void keySetResultAVLTreeMap(Blackhole hole) {
 		for(IntIterator iter = avlTreeMap.keySet().iterator();iter.hasNext();hole.consume(iter.nextInt()));
 	}
 	
 	@Benchmark
-	public void valuesMap(Blackhole hole) {
+	public void valuesResultHashMap(Blackhole hole) {
 		for(DoubleIterator iter = map.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesLinkedMap(Blackhole hole) {
+	public void valuesResultLinkedHashMap(Blackhole hole) {
 		for(DoubleIterator iter = linkedMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesArrayMap(Blackhole hole) {
+	public void valuesResultArrayMap(Blackhole hole) {
 		for(DoubleIterator iter = arrayMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesRBTreeMap(Blackhole hole) {
+	public void valuesResultRBTreeMap(Blackhole hole) {
 		for(DoubleIterator iter = rbTreeMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 	
 	@Benchmark
-	public void valuesAVLTreeMap(Blackhole hole) {
+	public void valuesResultAVLTreeMap(Blackhole hole) {
 		for(DoubleIterator iter = avlTreeMap.values().iterator();iter.hasNext();hole.consume(iter.nextDouble()));
 	}
 }

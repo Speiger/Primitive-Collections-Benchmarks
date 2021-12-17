@@ -49,133 +49,133 @@ public class PCRemoveCollectionBenchmarks extends RemoveCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public void removeArrayList() {
+	public void removeResultArrayList() {
 		for(int i = 0;i<100;i++) {
 			arrayList.remInt(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void removeLinkedList() {
+	public void removeResultLinkedList() {
 		for(int i = 0;i<100;i++) {
 			linkedList.remInt(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void pollFirstLinkedList(Blackhole hole) {
+	public void pollFirstResultLinkedList(Blackhole hole) {
 		while(!linkedList.isEmpty()) {
 			hole.consume(linkedList.dequeue());
 		}
 	}
 	
 	@Benchmark
-	public void pollLastLinkedList(Blackhole hole) {
+	public void pollLastResultLinkedList(Blackhole hole) {
 		while(!linkedList.isEmpty()) {
 			hole.consume(linkedList.dequeueLast());
 		}
 	}
 	
 	@Benchmark
-	public void removeSet() {
+	public void removeResultHashSet() {
 		for(int i = 0;i<100;i++) {
 			set.remove(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void removeLinkedSet() {
+	public void removeResultLinkedHashSet() {
 		for(int i = 0;i<100;i++) {
 			linkedSet.remove(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void removeRBTreeSet() {
+	public void removeResultRBTreeSet() {
 		for(int i = 0;i<100;i++) {
 			rbTreeSet.remove(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void pollFirstRBTreeSet(Blackhole hole) {
+	public void pollFirstResultRBTreeSet(Blackhole hole) {
 		while(!rbTreeSet.isEmpty()) {
 			hole.consume(rbTreeSet.pollFirstInt());
 		}
 	}
 	
 	@Benchmark
-	public void pollLastRBTreeSet(Blackhole hole) {
+	public void pollLastResultRBTreeSet(Blackhole hole) {
 		while(!rbTreeSet.isEmpty()) {
 			hole.consume(rbTreeSet.pollLastInt());
 		}
 	}
 	
 	@Benchmark
-	public void removeAVLTreeSet() {
+	public void removeResultAVLTreeSet() {
 		for(int i = 0;i<100;i++) {
 			avlTreeSet.remove(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void pollFirstAVLTreeSet(Blackhole hole) {
+	public void pollFirstResultAVLTreeSet(Blackhole hole) {
 		while(!avlTreeSet.isEmpty()) {
 			hole.consume(avlTreeSet.pollFirstInt());
 		}
 	}
 	
 	@Benchmark
-	public void pollLastAVLTreeSet(Blackhole hole) {
+	public void pollLastResultAVLTreeSet(Blackhole hole) {
 		while(!avlTreeSet.isEmpty()) {
 			hole.consume(avlTreeSet.pollLastInt());
 		}
 	}
 	
 	@Benchmark
-	public void removeFIFOQueue() {
+	public void removeResultFIFOQueue() {
 		for(int i = 0;i<100;i++) {
 			fifoQueue.removeFirst(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void pollFirstFIFOQueue(Blackhole hole) {
+	public void pollFirstResultFIFOQueue(Blackhole hole) {
 		while(!fifoQueue.isEmpty()) {
 			hole.consume(fifoQueue.dequeue());
 		}
 	}
 	
 	@Benchmark
-	public void pollLastFIFOQueue(Blackhole hole) {
+	public void pollLastResultFIFOQueue(Blackhole hole) {
 		while(!fifoQueue.isEmpty()) {
 			hole.consume(fifoQueue.dequeueLast());
 		}
 	}
 	
 	@Benchmark
-	public void removeHeapQueue() {
+	public void removeResultHeapQueue() {
 		for(int i = 0;i<100;i++) {
 			heapQueue.removeFirst(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void pollHeapQueue(Blackhole hole) {
+	public void pollResultHeapQueue(Blackhole hole) {
 		while(!heapQueue.isEmpty()) {
 			hole.consume(heapQueue.dequeue());
 		}
 	}
 	
 	@Benchmark
-	public void removeArrayQueue() {
+	public void removeResultArrayQueue() {
 		for(int i = 0;i<100;i++) {
 			arrayQueue.removeFirst(removeValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void pollArrayQueue(Blackhole hole) {
+	public void pollResultArrayQueue(Blackhole hole) {
 		while(!arrayQueue.isEmpty()) {
 			hole.consume(arrayQueue.dequeue());
 		}

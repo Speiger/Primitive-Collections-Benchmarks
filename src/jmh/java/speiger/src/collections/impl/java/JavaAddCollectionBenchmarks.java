@@ -17,7 +17,7 @@ import speiger.src.collections.base.AddCollectionBenchmarks;
 public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 {
 	@Benchmark
-	public List<Integer> addList() {
+	public List<Integer> addResultArrayList() {
 		List<Integer> result = new ArrayList<>(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -26,7 +26,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public List<Integer> addEmptyList() {
+	public List<Integer> addEmptyResultArrayList() {
 		List<Integer> result = new ArrayList<>();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -35,7 +35,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public List<Integer> addLinkedList() {
+	public List<Integer> addResultLinkedList() {
 		List<Integer> result = new LinkedList<>();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -44,7 +44,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public Set<Integer> addSetBenchmark() {
+	public Set<Integer> addResultHashSet() {
 		Set<Integer> result = new HashSet<>(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -53,7 +53,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public Set<Integer> addEmptySetBenchmark() {
+	public Set<Integer> addEmptyResultHashSet() {
 		Set<Integer> result = new HashSet<>();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -62,7 +62,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public Set<Integer> addLinkedSetBenchmark() {
+	public Set<Integer> addResultLinkedHashSet() {
 		Set<Integer> result = new LinkedHashSet<>(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -71,7 +71,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public Set<Integer> addEmptyLinkedSetBenchmark() {
+	public Set<Integer> addEmptyResultLinkedHashSet() {
 	    Set<Integer> result = new LinkedHashSet<>();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -80,7 +80,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public Set<Integer> addTreeSetBenchmark() {
+	public Set<Integer> addResultTreeSet() {
 	    Set<Integer> result = new TreeSet<>();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -89,7 +89,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public Deque<Integer> addFIFOQueueBenchmark() {
+	public Deque<Integer> addResultFIFOQueue() {
 		Deque<Integer> result = new ArrayDeque<>(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -98,7 +98,7 @@ public class JavaAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public Deque<Integer> addEmptyFIFOQueueBenchmark() {
+	public Deque<Integer> addEmptyResultFIFOQueue() {
 		Deque<Integer> result = new ArrayDeque<>();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);

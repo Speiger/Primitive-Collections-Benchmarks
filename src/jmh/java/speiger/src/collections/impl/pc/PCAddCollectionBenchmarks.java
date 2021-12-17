@@ -20,7 +20,7 @@ import speiger.src.collections.ints.sets.IntSet;
 public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 {
 	@Benchmark
-	public IntList addList() {
+	public IntList addResultArrayList() {
 	    IntList result = new IntArrayList(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -29,7 +29,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntList addEmptyList() {
+	public IntList addEmptyResultArrayList() {
 	    IntList result = new IntArrayList();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -38,7 +38,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntList addLinkedList() {
+	public IntList addResultLinkedList() {
 	    IntList result = new IntLinkedList();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -47,7 +47,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addSetBenchmark() {
+	public IntSet addResultHashSet() {
 	    IntSet result = new IntOpenHashSet(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -56,7 +56,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addEmptySetBenchmark() {
+	public IntSet addEmptyResultHashSet() {
 	    IntSet result = new IntOpenHashSet();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -65,7 +65,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addLinkedSetBenchmark() {
+	public IntSet addResultLinkedHashSet() {
 	    IntSet result = new IntLinkedOpenHashSet(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -74,7 +74,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addEmptyLinkedSetBenchmark() {
+	public IntSet addEmptyResultLinkedHashSet() {
 	    IntSet result = new IntLinkedOpenHashSet();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -83,7 +83,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addArraySetBenchmark() {
+	public IntSet addResultArraySet() {
 	    IntSet result = new IntArraySet(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -92,7 +92,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addEmptyArraySetBenchmark() {
+	public IntSet addEmptyResultArraySet() {
 	    IntSet result = new IntArraySet();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -101,7 +101,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addRBTreeSetBenchmark() {
+	public IntSet addResultRBTreeSet() {
 	    IntSet result = new IntRBTreeSet();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -110,7 +110,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntSet addAVLTreeSetBenchmark() {
+	public IntSet addResultAVLTreeSet() {
 	    IntSet result = new IntAVLTreeSet();
 	    for(int i = 0; i < setSize; i++) {
 	        result.add(addedValues[i]);
@@ -119,7 +119,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addFIFOQueueBenchmark() {
+	public IntPriorityQueue addResultFIFOQueue() {
 		IntPriorityQueue result = new IntArrayFIFOQueue(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
@@ -128,7 +128,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addEmptyFIFOQueueBenchmark() {
+	public IntPriorityQueue addEmptyResultFIFOQueue() {
 		IntPriorityQueue result = new IntArrayFIFOQueue();
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
@@ -137,9 +137,8 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addHeapQueueBenchmark() {
+	public IntPriorityQueue addResultHeapQueue() {
 		IntPriorityQueue result = new IntHeapPriorityQueue(setSize);
-		result.clear();//Due to a bug in the implementation this has to be done
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
 	    }
@@ -147,7 +146,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addEmptyHeapQueueBenchmark() {
+	public IntPriorityQueue addEmptyResultHeapQueue() {
 		IntPriorityQueue result = new IntHeapPriorityQueue();
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
@@ -156,9 +155,8 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addArrayQueueBenchmark() {
+	public IntPriorityQueue addResultArrayQueue() {
 		IntPriorityQueue result = new IntArrayPriorityQueue(setSize);
-		result.clear();//Due to a bug in the implementation this has to be done
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
 	    }
@@ -166,7 +164,7 @@ public class PCAddCollectionBenchmarks extends AddCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public IntPriorityQueue addEmptyArrayQueueBenchmark() {
+	public IntPriorityQueue addEmptyResultArrayQueue() {
 		IntPriorityQueue result = new IntArrayPriorityQueue();
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);

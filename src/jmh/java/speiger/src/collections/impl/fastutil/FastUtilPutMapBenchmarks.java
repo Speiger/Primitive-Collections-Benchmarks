@@ -13,7 +13,7 @@ import speiger.src.collections.base.PutMapBenchmarks;
 public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 {
 	@Benchmark
-	public Int2DoubleMap putMap() {
+	public Int2DoubleMap putResultHashMap() {
 		Int2DoubleMap map = new Int2DoubleOpenHashMap(setSize);
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
@@ -22,7 +22,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap putEmptyMap() {
+	public Int2DoubleMap putEmptyResultHashMap() {
 		Int2DoubleMap map = new Int2DoubleOpenHashMap();
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
@@ -31,7 +31,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap putLinkedMap() {
+	public Int2DoubleMap putResultLinkedHashMap() {
 		Int2DoubleMap map = new Int2DoubleLinkedOpenHashMap(setSize);
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
@@ -40,7 +40,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap putEmptyLinkedMap() {
+	public Int2DoubleMap putEmptyResultLinkedHashMap() {
 		Int2DoubleMap map = new Int2DoubleLinkedOpenHashMap();
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
@@ -49,7 +49,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap putArrayMap() {
+	public Int2DoubleMap putResultArrayMap() {
 		Int2DoubleMap map = new Int2DoubleArrayMap(setSize);
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
@@ -58,7 +58,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap putEmptyArrayMap() {
+	public Int2DoubleMap putEmptyResultArrayMap() {
 		Int2DoubleMap map = new Int2DoubleArrayMap();
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
@@ -67,7 +67,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap putRBTreeMap() {
+	public Int2DoubleMap putResultRBTreeMap() {
 		Int2DoubleMap map = new Int2DoubleRBTreeMap();
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
@@ -76,7 +76,7 @@ public class FastUtilPutMapBenchmarks extends PutMapBenchmarks
 	}
 	
 	@Benchmark
-	public Int2DoubleMap putAVLTreeMap() {
+	public Int2DoubleMap putResultAVLTreeMap() {
 		Int2DoubleMap map = new Int2DoubleAVLTreeMap();
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);

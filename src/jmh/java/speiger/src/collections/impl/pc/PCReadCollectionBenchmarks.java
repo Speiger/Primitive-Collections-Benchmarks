@@ -49,248 +49,248 @@ public class PCReadCollectionBenchmarks extends ReadCollectionBenchmarks
 	}
 	
 	@Benchmark
-	public void containsArrayList(Blackhole hole) {
+	public void containsResultArrayList(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arrayList.contains(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void indexOfArrayList(Blackhole hole) {
+	public void indexOfResultArrayList(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arrayList.indexOf(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void lastIndexOfArrayList(Blackhole hole) {
+	public void lastIndexOfResultArrayList(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arrayList.lastIndexOf(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void getArrayList(Blackhole hole) {
+	public void getResultArrayList(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arrayList.getInt(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsLinkedList(Blackhole hole) {
+	public void containsResultLinkedList(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedList.contains(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsSet(Blackhole hole) {
+	public void containsResultHashSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(set.contains(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsLinkedSet(Blackhole hole) {
+	public void containsResultLinkedHashSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedSet.contains(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsArraySet(Blackhole hole) {
+	public void containsResultArraySet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(arraySet.contains(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsRBTreeSet(Blackhole hole) {
+	public void containsResultRBTreeSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(rbTreeSet.contains(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void containsAVLTreeSet(Blackhole hole) {
+	public void containsResultAVLTreeSet(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(avlTreeSet.contains(testValues[i]));
 		}
 	}
 	
 	@Benchmark
-	public void iterateIndexArrayList(Blackhole hole) {
+	public void iterateIndexResultArrayList(Blackhole hole) {
 		for(int i = 0;i<setSize;i++) {
 			hole.consume(arrayList.getInt(i));
 		}
 	}
 	
 	@Benchmark
-	public void iterateForArrayList(Blackhole hole) {
+	public void iterateForLoopResultArrayList(Blackhole hole) {
 		for(IntIterator iter = arrayList.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
 		}
 	}
 	
 	@Benchmark
-	public void iterateForEachArrayList(Blackhole hole) {
+	public void iterateForEachResultArrayList(Blackhole hole) {
 		arrayList.forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateStreamArrayList(Blackhole hole) {
+	public void iterateStreamResultArrayList(Blackhole hole) {
 		arrayList.primitiveStream().forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateForLinkedList(Blackhole hole) {
+	public void iterateForLoopResultLinkedList(Blackhole hole) {
 		for(IntIterator iter = linkedList.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
 		}
 	}
 	
 	@Benchmark
-	public void iterateForEachLinkedList(Blackhole hole) {
+	public void iterateForEachResultLinkedList(Blackhole hole) {
 		linkedList.forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateStreamLinkedList(Blackhole hole) {
+	public void iterateStreamResultLinkedList(Blackhole hole) {
 		linkedList.primitiveStream().forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateForSet(Blackhole hole) {
+	public void iterateForLoopResultHashSet(Blackhole hole) {
 		for(IntIterator iter = set.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
 		}
 	}
 	
 	@Benchmark
-	public void iterateForEachSet(Blackhole hole) {
+	public void iterateForEachResultHashSet(Blackhole hole) {
 		set.forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateStreamSet(Blackhole hole) {
+	public void iterateStreamResultHashSet(Blackhole hole) {
 		set.primitiveStream().forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateForLinkedSet(Blackhole hole) {
+	public void iterateForLoopResultLinkedHashSet(Blackhole hole) {
 		for(IntIterator iter = linkedSet.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
 		}
 	}
 	
 	@Benchmark
-	public void iterateForEachLinkedSet(Blackhole hole) {
+	public void iterateForEachResultLinkedHashSet(Blackhole hole) {
 		linkedSet.forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateStreamLinkedSet(Blackhole hole) {
+	public void iterateStreamResultLinkedHashSet(Blackhole hole) {
 		linkedSet.primitiveStream().forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateForArraySet(Blackhole hole) {
+	public void iterateForLoopResultArraySet(Blackhole hole) {
 		for(IntIterator iter = arraySet.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
 		}
 	}
 	
 	@Benchmark
-	public void iterateForEachArraySet(Blackhole hole) {
+	public void iterateForEachResultArraySet(Blackhole hole) {
 		arraySet.forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateStreamArraySet(Blackhole hole) {
+	public void iterateStreamResultArraySet(Blackhole hole) {
 		arraySet.primitiveStream().forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateForRBTreeSet(Blackhole hole) {
+	public void iterateForLoopResultRBTreeSet(Blackhole hole) {
 		for(IntIterator iter = rbTreeSet.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
 		}
 	}
 	
 	@Benchmark
-	public void iterateForEachRBTreeSet(Blackhole hole) {
+	public void iterateForEachResultRBTreeSet(Blackhole hole) {
 		rbTreeSet.forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateStreamRBTreeSet(Blackhole hole) {
+	public void iterateStreamResultRBTreeSet(Blackhole hole) {
 		rbTreeSet.primitiveStream().forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateForAVLTreeSet(Blackhole hole) {
+	public void iterateForLoopResultAVLTreeSet(Blackhole hole) {
 		for(IntIterator iter = avlTreeSet.iterator();iter.hasNext();) {
 			hole.consume(iter.nextInt());
 		}
 	}
 	
 	@Benchmark
-	public void iterateForEachAVLTreeSet(Blackhole hole) {
+	public void iterateForEachResultAVLTreeSet(Blackhole hole) {
 		avlTreeSet.forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public void iterateStreamAVLTreeSet(Blackhole hole) {
+	public void iterateStreamResultAVLTreeSet(Blackhole hole) {
 		avlTreeSet.primitiveStream().forEach(hole::consume);
 	}
 	
 	@Benchmark
-	public int[] toArrayArrayList() {
+	public int[] toArrayResultArrayList() {
 		return arrayList.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayLinkedList() {
+	public int[] toArrayResultLinkedList() {
 		return linkedList.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArraySet() {
+	public int[] toArrayResultHashSet() {
 		return set.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayLinkedSet() {
+	public int[] toArrayResultLinkedHashSet() {
 		return linkedSet.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayArraySet() {
+	public int[] toArrayResultArraySet() {
 		return arraySet.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayRBTreeSet() {
+	public int[] toArrayResultRBTreeSet() {
 		return rbTreeSet.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayAVLTreeSet() {
+	public int[] toArrayResultAVLTreeSet() {
 		return avlTreeSet.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayFIFOQueue() {
+	public int[] toArrayResultFIFOQueue() {
 		return fifoQueue.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayHeapQueue() {
+	public int[] toArrayResultHeapQueue() {
 		return heapQueue.toIntArray();
 	}
 	
 	@Benchmark
-	public int[] toArrayArrayQueue() {
+	public int[] toArrayResultArrayQueue() {
 		return arrayQueue.toIntArray();
 	}
 }

@@ -26,98 +26,98 @@ public class PCRemoveMapsBenchmarks extends RemoveMapBenchmarks
 	}
 	
 	@Benchmark
-	public void removeMap(Blackhole hole) {
+	public void removeResultHashMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(map.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void removeLinkedMap(Blackhole hole) {
+	public void removeResultLinkedHashMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(linkedMap.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void removeArrayMap(Blackhole hole) {
+	public void removeResultArrayMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(arrayMap.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void removeRBTreeMap(Blackhole hole) {
+	public void removeResultRBTreeMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(rbTreeMap.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void removeAVLMap(Blackhole hole) {
+	public void removeResultAVLTreeMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(avlTreeMap.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void replaceMap(Blackhole hole) {
+	public void replaceResultHashMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(map.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void replaceLinkedMap(Blackhole hole) {
+	public void replaceResultLinkedHashMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(linkedMap.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void replaceArrayMap(Blackhole hole) {
+	public void replaceResultArrayMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(arrayMap.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void replaceRBTreeMap(Blackhole hole) {
+	public void replaceResultRBTreeMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(rbTreeMap.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void replaceAVLMap(Blackhole hole) {
+	public void replaceResultAVLTreeMap(Blackhole hole) {
 		for(int i = 0;i<removeKeys.length;i++) {
 			hole.consume(avlTreeMap.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void pollFirstRBTreeMap(Blackhole hole) {
+	public void pollFirstResultRBTreeMap(Blackhole hole) {
 		while(!rbTreeMap.isEmpty()) {
 			hole.consume(rbTreeMap.pollFirstIntKey());
 		}
 	}
 	
 	@Benchmark
-	public void pollLastRBTreeMap(Blackhole hole) {
+	public void pollLastResultRBTreeMap(Blackhole hole) {
 		while(!rbTreeMap.isEmpty()) {
 			hole.consume(rbTreeMap.pollLastIntKey());
 		}
 	}
 	
 	@Benchmark
-	public void pollFirstAVLTreeMap(Blackhole hole) {
+	public void pollFirstResultAVLTreeMap(Blackhole hole) {
 		while(!avlTreeMap.isEmpty()) {
 			hole.consume(avlTreeMap.pollFirstIntKey());
 		}
 	}
 	
 	@Benchmark
-	public void pollLastAVLTreeMap(Blackhole hole) {
+	public void pollLastResultAVLTreeMap(Blackhole hole) {
 		while(!avlTreeMap.isEmpty()) {
 			hole.consume(avlTreeMap.pollLastIntKey());
 		}

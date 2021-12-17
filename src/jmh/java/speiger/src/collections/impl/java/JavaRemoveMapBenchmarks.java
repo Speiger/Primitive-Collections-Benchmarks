@@ -1,7 +1,6 @@
 package speiger.src.collections.impl.java;
 
 import java.util.HashMap;
-import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.NavigableMap;
@@ -16,7 +15,6 @@ public class JavaRemoveMapBenchmarks extends RemoveMapBenchmarks
 {
 	Map<Integer, Double> map;
 	Map<Integer, Double> linkedMap;
-	Map<Integer, Double> identityMap;
 	NavigableMap<Integer, Double> treeMap;
 	
 	@Override
@@ -24,81 +22,65 @@ public class JavaRemoveMapBenchmarks extends RemoveMapBenchmarks
 	{
 		map = new HashMap<>();
 		linkedMap = new LinkedHashMap<>();
-		identityMap = new IdentityHashMap<>();
 		treeMap = new TreeMap<>();
 		for(int i = 0;i<setSize;i++) {
 			map.put(addedKeys[i], addedValues[i]);
 			linkedMap.put(addedKeys[i], addedValues[i]);
-			identityMap.put(addedKeys[i], addedValues[i]);
 			treeMap.put(addedKeys[i], addedValues[i]);
 		}
 	}
 	
 	@Benchmark
-	public void removeMap(Blackhole hole) {
+	public void removeResultHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(map.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void removeLinkedMap(Blackhole hole) {
+	public void removeResultLinkedHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedMap.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void removeIdentityMap(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(identityMap.remove(removeKeys[i]));
-		}
-	}
-	
-	@Benchmark
-	public void removeTreeMap(Blackhole hole) {
+	public void removeResultTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(treeMap.remove(removeKeys[i]));
 		}
 	}
 	
 	@Benchmark
-	public void replaceMap(Blackhole hole) {
+	public void replaceResultHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(map.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void replacelinkedMap(Blackhole hole) {
+	public void replaceResultLinkedHashMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(linkedMap.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void replaceIdentityMap(Blackhole hole) {
-		for(int i = 0;i<100;i++) {
-			hole.consume(identityMap.replace(removeKeys[i], 5D));
-		}
-	}
-	
-	@Benchmark
-	public void replaceTreeMap(Blackhole hole) {
+	public void replaceResultTreeMap(Blackhole hole) {
 		for(int i = 0;i<100;i++) {
 			hole.consume(treeMap.replace(removeKeys[i], 5D));
 		}
 	}
 	
 	@Benchmark
-	public void pollFirstTreeMap(Blackhole hole) {
+	public void pollFirstResultTreeMap(Blackhole hole) {
 		for(int i = 0,m=treeMap.size();i<m;i++) {
 			hole.consume(treeMap.pollFirstEntry());
 		}
 	}
 	
 	@Benchmark
-	public void pollLastTreeMap(Blackhole hole) {
+	public void pollLastResultTreeMap(Blackhole hole) {
 		for(int i = 0,m=treeMap.size();i<m;i++) {
 			hole.consume(treeMap.pollLastEntry());
 		}

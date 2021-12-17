@@ -36,3 +36,4 @@ gradlew.bat generateFancyStatistics
 ```
 This must be done once you have run the Benchmark at least once and the results.json file exists.      
 Its located under: "build/reports/jmh"
+The output will be in the main directory and the file will be called "FancyResults.md"

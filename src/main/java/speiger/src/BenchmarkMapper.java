@@ -4,10 +4,8 @@ import java.io.BufferedWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 
 import com.google.gson.JsonElement;
@@ -17,12 +15,10 @@ import com.google.gson.JsonParser;
 import speiger.src.collections.objects.lists.ObjectArrayList;
 import speiger.src.collections.objects.lists.ObjectList;
 import speiger.src.collections.objects.maps.interfaces.Object2ObjectMap;
-import speiger.src.collections.objects.maps.interfaces.Object2ObjectMap.Entry;
-import speiger.src.collections.objects.utils.maps.Object2ObjectMaps;
 
 public class BenchmarkMapper
 {
-	public static final DecimalFormat FORMAT = new DecimalFormat("###,###.0##");
+	public static final DecimalFormat FORMAT = new DecimalFormat("###,##0.0##");
 	public static final List<String> INDEXES = ObjectArrayList.wrap("100", "1000", "10000");
 	public static final List<String> FOLDERS = ObjectArrayList.wrap("java", "eclipse", "hppc", "fastutil", "pc");
 	public static final List<String> NAMES = ObjectArrayList.wrap("Java", "Eclipse", "HPPC", "FastUtil", "PC");
@@ -46,7 +42,7 @@ public class BenchmarkMapper
 				BenchmarkResult result = results.get(i);
 				mappedResults.supplyIfAbsent(result.getCollection(), ObjectArrayList::new).add(result);
 			}
-			applyTreePatch(mappedResults); //Combining TreeSets.
+			BenchmarkResult.applyTreePatch(mappedResults); //Combining TreeSets.
 			StringBuilder finalBuilder = new StringBuilder();
 			for(String key : SORTING_ORDER)
 			{
@@ -76,48 +72,6 @@ public class BenchmarkMapper
 		}
 	}
 	
-	private static void applyTreePatch(Object2ObjectMap<String, ObjectList<BenchmarkResult>> mappedResults) {
-		Object2ObjectMap<String, BenchmarkResult> tree = mapResults(mappedResults.get("TreeMap"));
-		Map<String, BenchmarkResult> avl = mapResults(mappedResults.get("AVLTreeMap"));
-		Map<String, BenchmarkResult> rb = mapResults(mappedResults.get("RBTreeMap"));
-		for(Entry<String, BenchmarkResult> entry : Object2ObjectMaps.fastIterable(tree)) {
-			BenchmarkResult data = avl.get(entry.getKey());
-			if(data != null) {
-				data.merge(entry.getValue());
-			}
-			data = rb.get(entry.getKey());
-			if(data != null) {
-				data.merge(entry.getValue());
-			}
-		}
-		
-		tree = mapResults(mappedResults.get("TreeSet"));
-		avl = mapResults(mappedResults.get("AVLTreeSet"));
-		rb = mapResults(mappedResults.get("RBTreeSet"));
-		for(Entry<String, BenchmarkResult> entry : Object2ObjectMaps.fastIterable(tree)) {
-			BenchmarkResult data = avl.get(entry.getKey());
-			if(data != null) {
-				data.merge(entry.getValue());
-			}
-			data = rb.get(entry.getKey());
-			if(data != null) {
-				data.merge(entry.getValue());
-			}
-		}
-		mappedResults.remove("TreeMap");
-		mappedResults.remove("TreeSet");
-	}
-	
-	private static Object2ObjectMap<String, BenchmarkResult> mapResults(List<BenchmarkResult> list) {
-		if(list == null) return Object2ObjectMaps.empty();
-		Object2ObjectMap<String, BenchmarkResult> obj = Object2ObjectMap.builder().linkedMap();
-		for(int i = 0;i<list.size();i++) {
-			BenchmarkResult result = list.get(i);
-			obj.put(result.getName(), result);
-		}
-		return obj;
-	}
-	
 	private static class WidthInfo implements Consumer<BenchmarkResult>
 	{
 		int nameWidth = 0;
@@ -126,7 +80,7 @@ public class BenchmarkMapper
 		@Override
 		public void accept(BenchmarkResult t) {
 			nameWidth = Math.max(nameWidth, t.name.length());
-			for(int i = 0;i<NAMES.size();i++) {
+			for(int i = 0;i<maxWidths.length;i++) {
 				maxWidths[i] = Math.max(maxWidths[i], t.calculateCharCountForRow(i));
 			}
 		}
@@ -134,7 +88,7 @@ public class BenchmarkMapper
 		public void finish() {
 			nameWidth += 4;
 			int hppc = NAMES.indexOf("HPPC");
-			for(int i = 0;i<NAMES.size();i++) {
+			for(int i = 0;i<maxWidths.length;i++) {
 				maxWidths[i] = Math.max(maxWidths[i], (NAMES.get(i)+" Score").length()) + (i == 0 || i == hppc ? 1 : 0) + 4;
 			}
 		}
@@ -222,63 +176,6 @@ public class BenchmarkMapper
 		private int[] calcCenter(int textLength, int width) {
 			double result = (width - textLength) * 0.5D;
 			return result != (int)result ? new int[]{(int)result, (int)(result+1)} : new int[]{(int)result, (int)result};
-		}
-	}
-	
-	private static class BenchmarkResult
-	{
-		String name;
-		String collection;
-		String[][] scoresText = new String[INDEXES.size()][FOLDERS.size()];
-		double[][] scores = new double[INDEXES.size()][FOLDERS.size()];
-		
-		public BenchmarkResult(Entry<String, List<JsonObject>> entry) {
-			this(entry.getKey(), entry.getValue());
-		}
-		
-		public BenchmarkResult(String name, List<JsonObject> objs) {
-			String[] split = name.split("Result");
-			this.name = split[0];
-			collection = split[1];
-			for(JsonObject obj : objs)
-			{
-				String[] path = obj.get("benchmark").getAsString().split("\\.");
-				int mainScore = INDEXES.indexOf(obj.getAsJsonObject("params").get("setSize").getAsString());
-				int subScore = FOLDERS.indexOf(path[path.length-3]);
-				double score = obj.getAsJsonObject("primaryMetric").get("score").getAsDouble();
-				scoresText[mainScore][subScore] = FORMAT.format(score);
-				scores[mainScore][subScore] = score;
-			}
-			for(int i = 0;i<scoresText.length;i++)
-			{
-				for(int j = 0;j<scoresText[i].length;j++)
-				{
-					if(scoresText[i][j] == null) scoresText[i][j] = "N/A";
-				}
-			}
-		}
-		
-		public void merge(BenchmarkResult toInject) {
-			for(int i = 0;i<scoresText.length;i++) {
-				for(int j = 0;j<scoresText[i].length;j++) {
-					if(scoresText[i][j].equalsIgnoreCase("N/A") && !toInject.scoresText[i][j].equalsIgnoreCase("N/A")) {
-						scoresText[i][j] = toInject.scoresText[i][j];
-						scores[i][j] = toInject.scores[i][j];
-					}
-				}
-			}
-		}
-		
-		public String getName() {
-			return name;
-		}
-		
-		public String getCollection() {
-			return collection;
-		}
-		
-		public int calculateCharCountForRow(int row) {
-			return Arrays.stream(scoresText[row]).mapToInt(String::length).max().getAsInt();
 		}
 	}
 }

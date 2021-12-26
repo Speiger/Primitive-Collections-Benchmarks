@@ -3,6 +3,7 @@ package speiger.src.collections.impl.fastutil;
 import org.openjdk.jmh.annotations.Benchmark;
 
 import it.unimi.dsi.fastutil.ints.IntAVLTreeSet;
+import it.unimi.dsi.fastutil.ints.IntArrayFIFOQueue;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayPriorityQueue;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
@@ -110,7 +111,7 @@ public class FastUtilAddCollectionBenchmarks extends AddCollectionBenchmarks
 	
 	@Benchmark
 	public IntPriorityQueue addResultFIFOQueue() {
-		IntPriorityQueue result = new IntArrayPriorityQueue(setSize);
+		IntPriorityQueue result = new IntArrayFIFOQueue(setSize);
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
 	    }
@@ -119,7 +120,7 @@ public class FastUtilAddCollectionBenchmarks extends AddCollectionBenchmarks
 	
 	@Benchmark
 	public IntPriorityQueue addEmptyResultFIFOQueue() {
-		IntPriorityQueue result = new IntArrayPriorityQueue();
+		IntPriorityQueue result = new IntArrayFIFOQueue();
 	    for(int i = 0; i < setSize; i++) {
 	        result.enqueue(addedValues[i]);
 	    }

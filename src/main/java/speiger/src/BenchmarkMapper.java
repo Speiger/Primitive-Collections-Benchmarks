@@ -2,11 +2,14 @@ package speiger.src;
 
 import java.io.BufferedWriter;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -15,12 +18,14 @@ import com.google.gson.JsonParser;
 import speiger.src.collections.objects.lists.ObjectArrayList;
 import speiger.src.collections.objects.lists.ObjectList;
 import speiger.src.collections.objects.maps.interfaces.Object2ObjectMap;
+import speiger.src.collections.objects.sets.ImmutableObjectOpenHashSet;
 
 public class BenchmarkMapper
 {
 	public static final DecimalFormat FORMAT = new DecimalFormat("###,##0.0##");
 	public static final List<String> INDEXES = ObjectArrayList.wrap("100", "1000", "10000");
 	public static final List<String> FOLDERS = ObjectArrayList.wrap("java", "eclipse", "hppc", "fastutil", "pc");
+	public static final Set<String> VALID_FOLDERS = new ImmutableObjectOpenHashSet<>(FOLDERS);
 	public static final List<String> NAMES = ObjectArrayList.wrap("Java", "Eclipse", "HPPC", "FastUtil", "PC");
 	public static final List<String> SORTING_ORDER = ObjectArrayList.wrap("ArrayList", "LinkedList", "FIFOQueue", "HeapQueue", "ArrayQueue", "HashSet", "LinkedHashSet", "ArraySet", "AVLTreeSet", "RBTreeSet", "HashMap", "LinkedHashMap", "ArrayMap", "AVLTreeMap", "RBTreeMap");
 	
@@ -29,11 +34,29 @@ public class BenchmarkMapper
 		try
 		{
 			Object2ObjectMap<String, List<JsonObject>> objects = Object2ObjectMap.builder().linkedMap();
-			for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(Paths.get(args[0]))).getAsJsonArray())
+			Path path = Paths.get(args[0]);
+			if(Files.isDirectory(path))
 			{
-				JsonObject obj = el.getAsJsonObject();
-				String[] s = obj.get("benchmark").getAsString().split("\\.");
-				objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
+				for(Path subFile : Files.walk(path).collect(Collectors.toList()))
+				{
+					if(Files.isDirectory(subFile)) continue;
+					for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(subFile)).getAsJsonArray())
+					{
+						JsonObject obj = el.getAsJsonObject();
+						String[] s = obj.get("benchmark").getAsString().split("\\.");
+						if(!VALID_FOLDERS.contains(s[s.length-3])) continue;
+						objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
+					}
+				}
+			}
+			else
+			{
+				for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(Paths.get(args[0]))).getAsJsonArray())
+				{
+					JsonObject obj = el.getAsJsonObject();
+					String[] s = obj.get("benchmark").getAsString().split("\\.");
+					objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
+				}
 			}
 			ObjectList<BenchmarkResult> results = objects.object2ObjectEntrySet().map(BenchmarkResult::new).pour(new ObjectArrayList<>());
 			results.sort(Comparator.comparing(BenchmarkResult::getName));
@@ -72,7 +95,7 @@ public class BenchmarkMapper
 		}
 	}
 	
-	private static class WidthInfo implements Consumer<BenchmarkResult>
+	public static class WidthInfo implements Consumer<BenchmarkResult>
 	{
 		int nameWidth = 0;
 		int[] maxWidths = new int[NAMES.size()];

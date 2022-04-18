@@ -153,31 +153,31 @@ The Y Axis is the amount of time to process each action. In Microseconds. (Lower
 
 ## Put
 
-![image](charts/maps/put.png)
+![image](charts/tree-maps/put.png)
 
 ## Contains Key
 
-![image](charts/maps/containsKey.png)
+![image](charts/tree-maps/containsKey.png)
 
 ## For Each
 
-![image](charts/maps/forEach.png)
+![image](charts/tree-maps/forEach.png)
 
 ## Clone
 
-![image](charts/maps/clone.png)
+![image](charts/tree-maps/clone.png)
 
 ## Get
 
-![image](charts/maps/get.png)
+![image](charts/tree-maps/get.png)
 
 ## Get Or Default
 
-![image](charts/maps/getOrDefault.png)
+![image](charts/tree-maps/getOrDefault.png)
 
 ## Remove
 
-![image](charts/maps/remove.png)
+![image](charts/tree-maps/remove.png)
 
 </p>
 </details>

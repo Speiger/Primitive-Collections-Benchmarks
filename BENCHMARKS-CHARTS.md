@@ -19,6 +19,9 @@ While the "addCollection" is prepared with how many elements are about to be ins
 The results may differ for each JVM.    
 More detailed results with Exact Numbers can be found [[here]](BENCHMARKS.md)
 
+### Chart Infos
+The X Axis is the amount elements added/inside the collection while the operation is performed.   
+The Y Axis is the amount of time to process each action. In Microseconds. (Lower is better)
 
 <details>
 <summary>Lists</summary>

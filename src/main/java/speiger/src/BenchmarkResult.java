@@ -59,8 +59,19 @@ class BenchmarkResult
 		return name;
 	}
 	
+	public String getCollectionName(String baseName) {
+		return baseName+" "+collection+": "+name;
+	}
+	
 	public String[] getNames() {
 		return new String[]{name+" (100)", name+" (1000)", name+" (10000)"};
+	}
+	
+	public String getChartData(int index) {
+		for(int i = 0;i<3;i++) {
+			if(scoresText[i][index].equalsIgnoreCase("N/A")) return null;
+		}
+		return new StringBuilder("data: [").append(scores[0][index]).append(", ").append(scores[1][index]).append(", ").append(scores[2][index]).append("]").toString();
 	}
 	
 	public String getName(int index) {

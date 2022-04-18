@@ -24,10 +24,12 @@ allprojects {
     }
     dependencies {
 		compile 'com.google.code.gson:gson:2.8.6'
-    	compile 'de.speiger:Primitive-Collections:0.5.3'
+    	compile 'de.speiger:Primitive-Collections:0.6.0'
     	compile 'it.unimi.dsi:fastutil:8.5.6'
     	compile 'org.eclipse.collections:eclipse-collections:11.0.0'
     	compile 'com.carrotsearch:hppc:0.9.1'
+		compile 'io.quickchart:QuickChart:1.2.0'
+    	
 //		compile fileTree(dir: 'libs', include: '*.jar') //So I can test fixes without having to upload them all the time...
 	}
 }
@@ -37,7 +39,7 @@ apply plugin: 'me.champeau.gradle.jmh'
 
 jmh {
     include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*', 'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 'speiger\\.src\\.collections\\.impl\\.eclipse\\.*', 'speiger\\.src\\.collections\\.impl\\.hppc\\.*', 'speiger\\.src\\.collections\\.impl\\.java\\.*']
-    //'speiger\\.src\\.collections\\.*'
+//    include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*']
     humanOutputFile = null
     resultFormat = 'json'
     warmupIterations = 1

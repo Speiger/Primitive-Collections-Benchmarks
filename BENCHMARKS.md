@@ -263,9 +263,9 @@ Now to the Benchmarks
 |  pollLast        |     100  |          0,291 |          N/A    |        N/A    |           N/A    |        0,307  | us/op |
 |  pollLast        |    1000  |          0,289 |          N/A    |        N/A    |           N/A    |        0,294  | us/op |
 |  pollLast        |   10000  |          0,289 |          N/A    |        N/A    |           N/A    |        0,295  | us/op |
-|  remove          |     100  |        207,202 |          N/A    |        N/A    |           N/A    |      162,698  | us/op |
-|  remove          |    1000  |        356,525 |          N/A    |        N/A    |           N/A    |      292,013  | us/op |
-|  remove          |   10000  |        876,713 |          N/A    |        N/A    |           N/A    |      579,155  | us/op |
+|  remove          |     100  |        207,202 |          N/A    |        N/A    |         191,98   |      162,698  | us/op |
+|  remove          |    1000  |        356,525 |          N/A    |        N/A    |         355,726  |      292,013  | us/op |
+|  remove          |   10000  |        876,713 |          N/A    |        N/A    |         652,6    |      579,155  | us/op |
 |  toArray         |     100  |         48,341 |          N/A    |        N/A    |          41,854  |       52,653  | us/op |
 |  toArray         |    1000  |        774,996 |          N/A    |        N/A    |         491,142  |      562,88   | us/op |
 |  toArray         |   10000  |     12.589,749 |          N/A    |        N/A    |       6.390,993  |    7.667,193  | us/op |
@@ -294,9 +294,9 @@ Now to the Benchmarks
 |  pollLast        |     100  |          0,291 |          N/A    |        N/A    |           N/A    |        0,295  | us/op |
 |  pollLast        |    1000  |          0,289 |          N/A    |        N/A    |           N/A    |        0,299  | us/op |
 |  pollLast        |   10000  |          0,289 |          N/A    |        N/A    |           N/A    |        0,294  | us/op |
-|  remove          |     100  |        207,202 |          N/A    |        N/A    |           N/A    |      161,395  | us/op |
-|  remove          |    1000  |        356,525 |          N/A    |        N/A    |           N/A    |      483,538  | us/op |
-|  remove          |   10000  |        876,713 |          N/A    |        N/A    |           N/A    |      576,674  | us/op |
+|  remove          |     100  |        207,202 |          N/A    |        N/A    |         395,773  |      161,395  | us/op |
+|  remove          |    1000  |        356,525 |          N/A    |        N/A    |         684,751  |      483,538  | us/op |
+|  remove          |   10000  |        876,713 |          N/A    |        N/A    |       1.163,454  |      576,674  | us/op |
 |  toArray         |     100  |         48,341 |          N/A    |        N/A    |          41,154  |       56,307  | us/op |
 |  toArray         |    1000  |        774,996 |          N/A    |        N/A    |         445,51   |      631,544  | us/op |
 |  toArray         |   10000  |     12.589,749 |          N/A    |        N/A    |       6.700,423  |    8.332,332  | us/op |

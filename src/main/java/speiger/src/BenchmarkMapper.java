@@ -1,6 +1,7 @@
 package speiger.src;
 
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -33,33 +34,7 @@ public class BenchmarkMapper
 	{
 		try
 		{
-			Object2ObjectMap<String, List<JsonObject>> objects = Object2ObjectMap.builder().linkedMap();
-			Path path = Paths.get(args[0]);
-			if(Files.isDirectory(path))
-			{
-				for(Path subFile : Files.walk(path).collect(Collectors.toList()))
-				{
-					if(Files.isDirectory(subFile)) continue;
-					for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(subFile)).getAsJsonArray())
-					{
-						JsonObject obj = el.getAsJsonObject();
-						String[] s = obj.get("benchmark").getAsString().split("\\.");
-						if(!VALID_FOLDERS.contains(s[s.length-3])) continue;
-						objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
-					}
-				}
-			}
-			else
-			{
-				for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(Paths.get(args[0]))).getAsJsonArray())
-				{
-					JsonObject obj = el.getAsJsonObject();
-					String[] s = obj.get("benchmark").getAsString().split("\\.");
-					objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
-				}
-			}
-			ObjectList<BenchmarkResult> results = objects.object2ObjectEntrySet().map(BenchmarkResult::new).pour(new ObjectArrayList<>());
-			results.sort(Comparator.comparing(BenchmarkResult::getName));
+			ObjectList<BenchmarkResult> results = parseFiles(Paths.get(args[0]));
 			Object2ObjectMap<String, ObjectList<BenchmarkResult>> mappedResults = Object2ObjectMap.builder().linkedMap();
 			for(int i = 0,m=results.size();i<m;i++) {
 				BenchmarkResult result = results.get(i);
@@ -93,6 +68,36 @@ public class BenchmarkMapper
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	public static ObjectList<BenchmarkResult> parseFiles(Path baseFile) throws IOException {
+		Object2ObjectMap<String, List<JsonObject>> objects = Object2ObjectMap.builder().linkedMap();
+		if(Files.isDirectory(baseFile))
+		{
+			for(Path subFile : Files.walk(baseFile).collect(Collectors.toList()))
+			{
+				if(Files.isDirectory(subFile)) continue;
+				for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(subFile)).getAsJsonArray())
+				{
+					JsonObject obj = el.getAsJsonObject();
+					String[] s = obj.get("benchmark").getAsString().split("\\.");
+					if(!VALID_FOLDERS.contains(s[s.length-3])) continue;
+					objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
+				}
+			}
+		}
+		else
+		{
+			for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(baseFile)).getAsJsonArray())
+			{
+				JsonObject obj = el.getAsJsonObject();
+				String[] s = obj.get("benchmark").getAsString().split("\\.");
+				objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
+			}
+		}
+		ObjectList<BenchmarkResult> results = objects.object2ObjectEntrySet().map(BenchmarkResult::new).pourAsList();
+		results.sort(Comparator.comparing(BenchmarkResult::getName));
+		return results;
 	}
 	
 	public static class WidthInfo implements Consumer<BenchmarkResult>

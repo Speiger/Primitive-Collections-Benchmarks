@@ -68,19 +68,20 @@ public class FastUtilRemoveCollectionBenchmarks extends RemoveCollectionBenchmar
 		}
 	}
 	
-//	@Benchmark
-//	public void removeResultRBTreeSet() {
-//		for(int i = 0;i<100;i++) {
-//			rbTreeSet.remove(removeValues[i]); //Was Causing a freeze thats why disabled
-//		}
-//	}
-//	
-//	@Benchmark
-//	public void removeResultAVLTreeSet() {
-//		for(int i = 0;i<100;i++) {
-//			avlTreeSet.remove(removeValues[i]); //Was Causing a freeze thats why disabled
-//		}
-//	}
+	@Benchmark
+	public void removeResultRBTreeSet() {
+		for(int i = 0;i<100;i++) {
+			rbTreeSet.remove(removeValues[i]);
+			
+		}
+	}
+	
+	@Benchmark
+	public void removeResultAVLTreeSet() {
+		for(int i = 0;i<100;i++) {
+			avlTreeSet.remove(removeValues[i]);
+		}
+	}
 	
 	@Benchmark
 	public void pollFirstResultFIFOQueue(Blackhole hole) {

@@ -4,7 +4,7 @@ Benchmarks for Primitive Collections
 These Benchmarks test Primitive Collections against Java8 and FastUtil using Jmh
 
 There is a raw and a Fancified version of the Benchmarks.     
-[[Raw Results]](benchmarkResults.txt), [[Fancy Results]](BENCHMARKS.md)
+[[Raw Results]](benchmarkResults.txt), [[Fancy Results]](BENCHMARKS.md), [[Charts]](BENCHMARKS-CHARTS.md)
 
 Also Primitive Collections provides Query Functions that replace Streams by directly implementing them into the Collection.
 

@@ -121,7 +121,7 @@ public class HppcReadCollectionBenchmarks extends ReadCollectionBenchmarks
 	
 	@Benchmark
 	public void iterateForLoopResultLinkedHashSet(Blackhole hole) {
-		for(IntCursor cursor : set) {
+		for(IntCursor cursor : linkedSet) {
 			hole.consume(cursor.value);
 		}
 	}
@@ -129,12 +129,12 @@ public class HppcReadCollectionBenchmarks extends ReadCollectionBenchmarks
 	@Benchmark
 	public void iterateForEachResultLinkedHashSet(Blackhole hole) {
 		Consumer<IntCursor> action = T -> hole.consume(T.value);
-		set.forEach(action);
+		linkedSet.forEach(action);
 	}
 	
 	@Benchmark
 	public void iterateStreamResultLinkedHashSet(Blackhole hole) {
-		StreamSupport.stream(set.spliterator(), false).forEach(T -> hole.consume(T.value));
+		StreamSupport.stream(linkedSet.spliterator(), false).forEach(T -> hole.consume(T.value));
 	}
 	
 	@Benchmark

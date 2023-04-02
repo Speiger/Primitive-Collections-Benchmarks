@@ -5,11 +5,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
-import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.google.gson.JsonElement;
@@ -18,192 +17,78 @@ import com.google.gson.JsonParser;
 
 import speiger.src.collections.objects.lists.ObjectArrayList;
 import speiger.src.collections.objects.lists.ObjectList;
+import speiger.src.collections.objects.maps.impl.hash.Object2ObjectLinkedOpenHashMap;
 import speiger.src.collections.objects.maps.interfaces.Object2ObjectMap;
-import speiger.src.collections.objects.sets.ImmutableObjectOpenHashSet;
+import speiger.src.collections.objects.utils.ObjectLists;
 
-public class BenchmarkMapper
-{
-	public static final DecimalFormat FORMAT = new DecimalFormat("###,##0.0##");
-	public static final List<String> INDEXES = ObjectArrayList.wrap("100", "1000", "10000");
-	public static final List<String> FOLDERS = ObjectArrayList.wrap("java", "eclipse", "hppc", "fastutil", "pc");
-	public static final Set<String> VALID_FOLDERS = new ImmutableObjectOpenHashSet<>(FOLDERS);
-	public static final List<String> NAMES = ObjectArrayList.wrap("Java", "Eclipse", "HPPC", "FastUtil", "PC");
-	public static final List<String> SORTING_ORDER = ObjectArrayList.wrap("ArrayList", "LinkedList", "FIFOQueue", "HeapQueue", "ArrayQueue", "HashSet", "LinkedHashSet", "ArraySet", "AVLTreeSet", "RBTreeSet", "HashMap", "LinkedHashMap", "ArrayMap", "AVLTreeMap", "RBTreeMap");
+public class BenchmarkMapper {
+	public static final Map<String, String> ID_TO_NAME = Object2ObjectMap.builder().<String, String>start()
+			.put("java", "Java").put("eclipse", "Eclipse")
+			.put("hppc", "HPPC").put("koloboke", "Koloboke")
+			.put("fastutil", "FastUtil").put("pc", "PC").map();
+	public static final List<String> IDS = ObjectArrayList.wrap("java", "eclipse", "hppc", "koloboke", "fastutil", "pc");
+
+	private static final List<String> SORTING_ORDER = ObjectArrayList.wrap("ArrayList", "LinkedList", "FIFOQueue", "HeapQueue", "ArrayQueue", "HashSet", "LinkedHashSet", "ArraySet", "AVLTreeSet", "RBTreeSet", "HashMap", "LinkedHashMap", "ArrayMap", "AVLTreeMap", "RBTreeMap");
 	
-	public static void main(String[] args)
-	{
-		try
-		{
-			ObjectList<BenchmarkResult> results = parseFiles(Paths.get(args[0]));
-			Object2ObjectMap<String, ObjectList<BenchmarkResult>> mappedResults = Object2ObjectMap.builder().linkedMap();
-			for(int i = 0,m=results.size();i<m;i++) {
-				BenchmarkResult result = results.get(i);
-				mappedResults.supplyIfAbsent(result.getCollection(), ObjectArrayList::new).add(result);
-			}
-			BenchmarkResult.applyTreePatch(mappedResults); //Combining TreeSets.
-			StringBuilder finalBuilder = new StringBuilder();
-			for(String key : SORTING_ORDER)
-			{
-				ObjectList<BenchmarkResult> value = mappedResults.get(key);
-				StringBuilder builder = new StringBuilder();
-				WidthInfo info = new WidthInfo();
-				value.forEach(info);
-				info.finish();
-				info.buildBeginArea(builder);
-				builder.insert(0, "\n").insert(0, key).insert(0, "### ");
-				value.forEach(builder, info::buildRow);
-				builder.append("\n");
-				finalBuilder.append(builder.toString());
+	public static void main(String[] args) {
+		try {
+			Map<String, BenchCollection> mapped = parseData(Paths.get(args[0]));
+			mergeData(mapped, "TreeMap", "AVLTreeMap", "RBTreeMap");
+			mergeData(mapped, "TreeSet", "AVLTreeSet", "RBTreeSet");
+			StringBuilder builder = new StringBuilder();
+			for(String clz : SORTING_ORDER) {
+				BenchCollection collection = mapped.get(clz);
+				if(collection == null) continue;
+				builder.append("### ").append(clz).append("\n");
+				builder.append(collection.buildResult(filterIds(collection), ID_TO_NAME));
+				builder.append("\n\n");
 			}
 			try(BufferedWriter writer = Files.newBufferedWriter(Paths.get(args[1])))
 			{
-				writer.append(finalBuilder.toString());
+				writer.append(builder.toString());
 			}
-			catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public static ObjectList<BenchmarkResult> parseFiles(Path baseFile) throws IOException {
-		Object2ObjectMap<String, List<JsonObject>> objects = Object2ObjectMap.builder().linkedMap();
-		if(Files.isDirectory(baseFile))
-		{
-			for(Path subFile : Files.walk(baseFile).collect(Collectors.toList()))
-			{
-				if(Files.isDirectory(subFile)) continue;
-				for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(subFile)).getAsJsonArray())
-				{
-					JsonObject obj = el.getAsJsonObject();
-					String[] s = obj.get("benchmark").getAsString().split("\\.");
-					if(!VALID_FOLDERS.contains(s[s.length-3])) continue;
-					objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
-				}
-			}
+	private static ObjectList<String> filterIds(BenchCollection collection) {
+		ObjectList<String> lists = new ObjectArrayList<>();
+		Set<String> ids = collection.getUsedLibraries();
+		for(String id : IDS) {
+			if(ids.contains(id)) lists.add(id);
 		}
-		else
-		{
-			for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(baseFile)).getAsJsonArray())
-			{
-				JsonObject obj = el.getAsJsonObject();
-				String[] s = obj.get("benchmark").getAsString().split("\\.");
-				objects.supplyIfAbsent(s[s.length-1], ObjectArrayList::new).add(obj);
-			}
-		}
-		ObjectList<BenchmarkResult> results = objects.object2ObjectEntrySet().map(BenchmarkResult::new).pourAsList();
-		results.sort(Comparator.comparing(BenchmarkResult::getName));
-		return results;
+		return lists;
 	}
 	
-	public static class WidthInfo implements Consumer<BenchmarkResult>
-	{
-		int nameWidth = 0;
-		int[] maxWidths = new int[NAMES.size()];
-		
-		@Override
-		public void accept(BenchmarkResult t) {
-			nameWidth = Math.max(nameWidth, t.name.length());
-			for(int i = 0;i<maxWidths.length;i++) {
-				maxWidths[i] = Math.max(maxWidths[i], t.calculateCharCountForRow(i));
+	public static void mergeData(Map<String, BenchCollection> mapped, String source, String...targets) {
+		if(targets == null || targets.length <= 0) return;
+		BenchCollection collection = mapped.remove(source);
+		if(collection == null) return;
+		for(String value : targets) {
+			BenchCollection target = mapped.get(value);
+			if(target == null) continue;
+			target.merge(collection);
+		}
+		mapped.values().forEach(BenchCollection::sort);
+	}
+	
+	public static Map<String, BenchCollection> parseData(Path file) throws IOException {
+		ObjectList<Path> files = Files.isDirectory(file) ? Files.walk(file).filter(Predicate.not(Files::isDirectory)).collect(Collectors.toCollection(ObjectArrayList::new)) : ObjectLists.singleton(file);
+		Map<String, BenchCollection> mappedCollections = new Object2ObjectLinkedOpenHashMap<>();
+		for(int i = 0,m=files.size();i<m;i++) {
+			for(JsonElement el : JsonParser.parseReader(Files.newBufferedReader(files.get(i))).getAsJsonArray())
+			{
+				JsonObject obj = el.getAsJsonObject();
+				String[] path = obj.get("benchmark").getAsString().split("\\.");
+				String library = path[path.length-3];
+				String[] names = path[path.length-1].split("Result");
+				int size = Integer.parseInt(obj.getAsJsonObject("params").get("setSize").getAsString());
+				double score = obj.getAsJsonObject("primaryMetric").get("score").getAsDouble();
+				mappedCollections.computeIfAbsent(names[1], BenchCollection::new).addFunction(names[0], size, library, score);
 			}
 		}
-		
-		public void finish() {
-			nameWidth += 4;
-			int hppc = NAMES.indexOf("HPPC");
-			for(int i = 0;i<maxWidths.length;i++) {
-				maxWidths[i] = Math.max(maxWidths[i], (NAMES.get(i)+" Score").length()) + (i == 0 || i == hppc ? 1 : 0) + 4;
-			}
-		}
-		
-		public void buildBeginArea(StringBuilder builder) {
-			int[] result = calcCenter(6, nameWidth);
-			builder.append("|");
-			appendSpaces(builder, result[0]);
-			builder.append("Action");
-			appendSpaces(builder, result[1]);
-			builder.append("|");
-			result = calcCenter(4, 10);
-			appendSpaces(builder, result[0]);
-			builder.append("Size");
-			appendSpaces(builder, result[1]);
-			builder.append("|");
-			for(int i = 0;i<NAMES.size();i++) {
-				String s = NAMES.get(i)+" Score";
-				result = calcCenter(s.length(), maxWidths[i]);
-				appendSpaces(builder, result[0]);
-				builder.append(s);
-				appendSpaces(builder, result[1]);
-				builder.append("|");
-			}
-			builder.append(" Units |");
-			int length = builder.length();
-			builder.append("\n");
-			for(int i = 0;i<length;i++) {
-				builder.append(builder.charAt(i) == '|' ? '|' : "-");
-			}
-			builder.append("\n");
-		}
-		
-		private void appendSpaces(StringBuilder builder, int amount) {
-			for(int i = 0;i<amount;i++) builder.append(" ");			
-		}
-		
-		public void buildRow(StringBuilder builder, BenchmarkResult result) {
-			for(int j = 0;j<INDEXES.size();j++) {
-				String count = INDEXES.get(j);
-				builder.append("|");
-				int[] spaces = calcNameCenter(result.name.length());
-				appendSpaces(builder, spaces[0]);
-				builder.append(result.name);
-				appendSpaces(builder, spaces[1]);
-				builder.append("|");
-				spaces = scaleSizeCenter(count.length());
-				appendSpaces(builder, spaces[0]);
-				builder.append(count);
-				appendSpaces(builder, spaces[1]);
-				builder.append("|");
-				for(int i = 0;i<FOLDERS.size();i++) {
-					spaces = calcBarBuff(result.scoresText[j][i], maxWidths[i], i);
-					appendSpaces(builder, spaces[0]);
-					builder.append(result.scoresText[j][i]);
-					appendSpaces(builder, spaces[1]);
-					builder.append("|");
-				}
-				builder.append(" us/op |");
-				builder.append("\n");
-			}
-		}
-		
-		private int[] scaleSizeCenter(int count) {
-			return new int[]{8-count, 2};
-		}
-		
-		private int[] calcNameCenter(int length) {
-			return new int[]{2, (nameWidth-2) - length};
-		}
-		
-		private int[] calcBarBuff(String number, int width, int index) {
-			if(index == 0) { //Java Specific
-				if(number.equalsIgnoreCase("N/A")) return new int[]{width - 6, 3};
-				String[] split = number.split("\\,");
-				if(split.length != 2) System.out.println(number);
-				return new int[]{width - 5 - split[0].length(), 4-split[1].length()};
-			}
-			if(number.equalsIgnoreCase("N/A")) return new int[]{width - 7, 4};
-			String[] split = number.split("\\,");
-			if(split.length != 2) System.out.println(number);
-			return new int[]{width - 6 - split[0].length(), 5-split[1].length()};
-		}
-		
-		private int[] calcCenter(int textLength, int width) {
-			double result = (width - textLength) * 0.5D;
-			return result != (int)result ? new int[]{(int)result, (int)(result+1)} : new int[]{(int)result, (int)result};
-		}
+		mappedCollections.values().forEach(BenchCollection::sort);
+		return mappedCollections;
 	}
 }

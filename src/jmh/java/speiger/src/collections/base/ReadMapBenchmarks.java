@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
@@ -15,7 +16,7 @@ import org.openjdk.jmh.annotations.State;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @Measurement(batchSize = 1000, iterations = 10)
-@State(Scope.Benchmark)
+@State(Scope.Thread)
 public abstract class ReadMapBenchmarks
 {
 	@Param({"100", "1000", "10000"})
@@ -25,7 +26,7 @@ public abstract class ReadMapBenchmarks
 	public double[] addedValues;
 	public int[] testKeys;
 	
-	@Setup
+	@Setup(Level.Iteration)
 	public void init() {
 		addedKeys = new int[setSize];
 		addedValues = new double[setSize];

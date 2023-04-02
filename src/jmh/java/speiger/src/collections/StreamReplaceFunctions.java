@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
@@ -18,12 +19,12 @@ import speiger.src.collections.ints.lists.IntArrayList;
 
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-@State(Scope.Benchmark)
+@State(Scope.Thread)
 public class StreamReplaceFunctions
 {
 	public int[] data;
 	
-	@Setup
+	@Setup(Level.Iteration)
 	public void setup() {
 		Random rand = new Random(1210214121L);
 		data = new int[100000];

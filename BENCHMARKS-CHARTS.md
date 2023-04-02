@@ -1,20 +1,23 @@
-## Benchmarks Charts
+## Benchmarks charts/V080
 
-Benchmarks were made using Jmh version 1.25 and Java OpenJDK 8 version 275-1 on a Intel I5-7500 and the following libraries:
-- Primitive Collections 0.5.3
-- FastUtil 8.5.6
+Benchmarks were made using Jmh version 1.35 and JDK 17.0.2 Java HotSpot(TM) on a Ryzen 9 7900 and the following libraries:
+- Primitive Collections 0.8.0
+- FastUtil 8.5.12
 - HPPC 0.9.1
-- Eclipse Collections 11.0.0
-   
-Each benchmark was created using Average Time with a 10 second warmup time and using Primitive Values (objects for Java Collections)
-Score is the amount of time it took to do each operation in Microseconds (according to Jmh)
-The Variable Size defines the amount of elements the Collection had to deal with.
-These are used in 2 ways.
+- Eclipse Collections 11.1.0
+
+Each benchmark was created using Average Time with a 1 second warmup time and 10 iterations with 1 second test time* and using Primitive Values (objects for Java Collections)    
+Score is the amount of time it took to do each operation in Microseconds (according to Jmh)    
+The Variable Size defines the amount of elements the Collection had to deal with.    
+These are used in 2 ways.    
 - If the function is a "add/put" it is the amount of elements that are added into the empty collection.
 - If the function is not a "add/put" its the amount of elements that are inside of the Collection and a 100 random elements (within range) are tested against.
 
-Another definition is "addEmptyCollection". The Empty stands for the Collection was initialized without a expected size.
-While the "addCollection" is prepared with how many elements are about to be inserted.
+Another definition is "addEmptyCollection". The Empty stands for the Collection was initialized without a expected size.    
+While the "addCollection" is prepared with how many elements are about to be inserted.    
+KeySets/Values are forEach Iterators    
+
+* It takes 3-4 hours to test everything so short tests for now until i can wait like 8-16 hours    
    
 The results may differ for each JVM.    
 More detailed results with Exact Numbers can be found [[here]](BENCHMARKS.md)
@@ -29,23 +32,23 @@ The Y Axis is the amount of time to process each action. In Microseconds. (Lower
 
 ## Add
 
-![image](charts/lists/add.png)
+![image](charts/V080/lists/add.png)
 
 ## AddEmpty
 
-![image](charts/lists/addEmpty.png)
+![image](charts/V080/lists/addEmpty.png)
 
 ## For Loop
 
-![image](charts/lists/iterateForLoop.png)
+![image](charts/V080/lists/iterateForLoop.png)
 
 ## Remove
 
-![image](charts/lists/remove.png)
+![image](charts/V080/lists/remove.png)
 
 ## To Array
 
-![image](charts/lists/toArray.png)
+![image](charts/V080/lists/toArray.png)
 
 </p>
 </details>
@@ -56,27 +59,27 @@ The Y Axis is the amount of time to process each action. In Microseconds. (Lower
 
 ## Add
 
-![image](charts/sets/add.png)
+![image](charts/V080/sets/add.png)
 
 ## AddEmpty
 
-![image](charts/sets/addEmpty.png)
+![image](charts/V080/sets/addEmpty.png)
 
 ## Contains
 
-![image](charts/sets/contains.png)
+![image](charts/V080/sets/contains.png)
 
 ## For Loop
 
-![image](charts/sets/iterateForLoop.png)
+![image](charts/V080/sets/iterateForLoop.png)
 
 ## Remove
 
-![image](charts/sets/remove.png)
+![image](charts/V080/sets/remove.png)
 
 ## To Array
 
-![image](charts/sets/toArray.png)
+![image](charts/V080/sets/toArray.png)
 
 </p>
 </details>
@@ -87,23 +90,23 @@ The Y Axis is the amount of time to process each action. In Microseconds. (Lower
 
 ## Add
 
-![image](charts/tree-sets/add.png)
+![image](charts/V080/tree-sets/add.png)
 
 ## Contains
 
-![image](charts/tree-sets/contains.png)
+![image](charts/V080/tree-sets/contains.png)
 
 ## For Loop
 
-![image](charts/tree-sets/iterateForLoop.png)
+![image](charts/V080/tree-sets/iterateForLoop.png)
 
 ## Remove
 
-![image](charts/tree-sets/remove.png)
+![image](charts/V080/tree-sets/remove.png)
 
 ## To Array
 
-![image](charts/tree-sets/toArray.png)
+![image](charts/V080/tree-sets/toArray.png)
 
 </p>
 </details>
@@ -114,35 +117,35 @@ The Y Axis is the amount of time to process each action. In Microseconds. (Lower
 
 ## Put
 
-![image](charts/maps/put.png)
+![image](charts/V080/maps/put.png)
 
 ## PutEmpty
 
-![image](charts/maps/putEmpty.png)
+![image](charts/V080/maps/putEmpty.png)
 
 ## Contains Key
 
-![image](charts/maps/containsKey.png)
+![image](charts/V080/maps/containsKey.png)
 
 ## For Each
 
-![image](charts/maps/forEach.png)
+![image](charts/V080/maps/forEach.png)
 
 ## Clone
 
-![image](charts/maps/clone.png)
+![image](charts/V080/maps/clone.png)
 
 ## Get
 
-![image](charts/maps/get.png)
+![image](charts/V080/maps/get.png)
 
 ## Get Or Default
 
-![image](charts/maps/getOrDefault.png)
+![image](charts/V080/maps/getOrDefault.png)
 
 ## Remove
 
-![image](charts/maps/remove.png)
+![image](charts/V080/maps/remove.png)
 
 </p>
 </details>
@@ -153,31 +156,31 @@ The Y Axis is the amount of time to process each action. In Microseconds. (Lower
 
 ## Put
 
-![image](charts/tree-maps/put.png)
+![image](charts/V080/tree-maps/put.png)
 
 ## Contains Key
 
-![image](charts/tree-maps/containsKey.png)
+![image](charts/V080/tree-maps/containsKey.png)
 
 ## For Each
 
-![image](charts/tree-maps/forEach.png)
+![image](charts/V080/tree-maps/forEach.png)
 
 ## Clone
 
-![image](charts/tree-maps/clone.png)
+![image](charts/V080/tree-maps/clone.png)
 
 ## Get
 
-![image](charts/tree-maps/get.png)
+![image](charts/V080/tree-maps/get.png)
 
 ## Get Or Default
 
-![image](charts/tree-maps/getOrDefault.png)
+![image](charts/V080/tree-maps/getOrDefault.png)
 
 ## Remove
 
-![image](charts/tree-maps/remove.png)
+![image](charts/V080/tree-maps/remove.png)
 
 </p>
 </details>

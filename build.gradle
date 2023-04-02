@@ -1,5 +1,6 @@
 plugins {
-  id "me.champeau.gradle.jmh" version "0.5.3"
+	id "me.champeau.jmh" version "0.6.7"
+//  id "me.champeau.gradle.jmh" version "0.5.3"
 }
 
 allprojects {
@@ -10,8 +11,8 @@ allprojects {
     group = 'me.champeau.sample'
     version = '1.0-SNAPSHOT'
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = 17
+    targetCompatibility = 17
 
     repositories {
         mavenCentral()
@@ -23,28 +24,39 @@ allprojects {
    		}
     }
     dependencies {
-		compile 'com.google.code.gson:gson:2.8.6'
-    	compile 'de.speiger:Primitive-Collections:0.6.0'
-    	compile 'it.unimi.dsi:fastutil:8.5.6'
-    	compile 'org.eclipse.collections:eclipse-collections:11.0.0'
-    	compile 'com.carrotsearch:hppc:0.9.1'
-		compile 'io.quickchart:QuickChart:1.2.0'
+		implementation 'com.google.code.gson:gson:2.10.1'
+    	implementation 'de.speiger:Primitive-Collections:0.8.0'
+    	implementation 'it.unimi.dsi:fastutil:8.5.12'
+    	implementation 'org.eclipse.collections:eclipse-collections:11.1.0'
+    	implementation 'com.carrotsearch:hppc:0.9.1'
+		implementation 'io.quickchart:QuickChart:1.2.0'
+		implementation 'com.koloboke:koloboke-impl-jdk8:1.0.0'
+		
     	
 //		compile fileTree(dir: 'libs', include: '*.jar') //So I can test fixes without having to upload them all the time...
 	}
 }
 
 
-apply plugin: 'me.champeau.gradle.jmh'
+apply plugin: 'me.champeau.jmh'
+compileJava.options.encoding = "UTF-8"
 
 jmh {
-    include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*', 'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 'speiger\\.src\\.collections\\.impl\\.eclipse\\.*', 'speiger\\.src\\.collections\\.impl\\.hppc\\.*', 'speiger\\.src\\.collections\\.impl\\.java\\.*']
-//    include = ['speiger\\.src\\.collections\\.impl\\.pc\\.*']
+    includes = [
+    	'speiger\\.src\\.collections\\.impl\\.pc\\.*', 
+    	'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 
+    	'speiger\\.src\\.collections\\.impl\\.eclipse\\.*', 
+    	'speiger\\.src\\.collections\\.impl\\.hppc\\.*', 
+    	'speiger\\.src\\.collections\\.impl\\.koloboke\\.*', 
+    	'speiger\\.src\\.collections\\.impl\\.java\\.*'
+    ]
     humanOutputFile = null
     resultFormat = 'json'
     warmupIterations = 1
-    iterations = 1
-    fork = 2
+    iterations = 10
+    timeOnIteration = '1s'
+    warmup = '1s'
+    fork = 1
     operationsPerInvocation = 5
     threads = 1
 }
@@ -74,16 +86,4 @@ task splitStatistics(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = 'speiger.src.BenchmarkSplitter'
     args = ['build/reports/jmh/averageResults.json', 'build/reports/collections']
-}
-
-subprojects {
-    apply plugin: 'me.champeau.gradle.jmh'
-
-    jmh {
-    	include = 'speiger\\.src\\.collections\\.Test.*'
-        humanOutputFile = null
-        warmupIterations = 1
-        iterations = 1
-    }
-
 }

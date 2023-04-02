@@ -16,7 +16,7 @@ import org.openjdk.jmh.annotations.State;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @Measurement(batchSize = 1000, iterations = 10)
-@State(Scope.Benchmark)
+@State(Scope.Thread)
 public abstract class RemoveCollectionBenchmarks
 {
 	@Param({"100", "1000", "10000"})

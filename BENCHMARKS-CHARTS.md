@@ -17,7 +17,7 @@ Another definition is "addEmptyCollection". The Empty stands for the Collection 
 While the "addCollection" is prepared with how many elements are about to be inserted.    
 KeySets/Values are forEach Iterators    
 
-* It takes 3-4 hours to test everything so short tests for now until i can wait like 8-16 hours    
+1* It takes 3-4 hours to test everything so short tests for now until i can't wait like 8-16 hours with slower Benchmarks    
    
 The results may differ for each JVM.    
 More detailed results with Exact Numbers can be found [[here]](BENCHMARKS.md)

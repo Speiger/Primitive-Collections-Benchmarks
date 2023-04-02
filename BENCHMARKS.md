@@ -22,7 +22,7 @@ KeySets/Values are forEach Iterators
 
 Also JavaValues inside TreeSets/Maps are Javas "TreeMap/Set" implementation and are a RedBlack Tree Implementation.    
 
-* It takes 3-4 hours to test everything so short tests for now until i can wait like 8-16 hours    
+1* It takes 3-4 hours to test everything so short tests for now until i can't wait like 8-16 hours with slower Benchmarks    
 
 Now to the Benchmarks
 

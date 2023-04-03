@@ -6,7 +6,7 @@ Benchmarks were made using Jmh version 1.35 and JDK 17.0.2 Java HotSpot(TM) on a
 - HPPC 0.9.1
 - Eclipse Collections 11.1.0
 
-Each benchmark was created using Average Time with a 1 second warmup time and 10 iterations with 1 second test time* and using Primitive Values (objects for Java Collections)    
+Each benchmark was created using Average Time with 2 Warmup Iterations (3s) and 5 Iterations (2s) and using Primitive Values (objects for Java Collections)    
 Score is the amount of time it took to do each operation in Microseconds (according to Jmh)    
 The Variable Size defines the amount of elements the Collection had to deal with.    
 These are used in 2 ways.    

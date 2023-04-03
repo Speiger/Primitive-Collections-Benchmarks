@@ -43,22 +43,24 @@ compileJava.options.encoding = "UTF-8"
 
 jmh {
     includes = [
-    	'speiger\\.src\\.collections\\.impl\\.pc\\.*', 
-    	'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 
-    	'speiger\\.src\\.collections\\.impl\\.eclipse\\.*', 
-    	'speiger\\.src\\.collections\\.impl\\.hppc\\.*', 
-    	'speiger\\.src\\.collections\\.impl\\.koloboke\\.*', 
-    	'speiger\\.src\\.collections\\.impl\\.java\\.*'
+//		JMH since Java17 doesn't support multiple includes just 1
+		'speiger\\.src\\.collections\\.impl\\.*'
+//    	'speiger\\.src\\.collections\\.impl\\.pc\\.*', 
+//    	'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 
+//    	'speiger\\.src\\.collections\\.impl\\.eclipse\\.*', 
+//    	'speiger\\.src\\.collections\\.impl\\.hppc\\.*', 
+//    	'speiger\\.src\\.collections\\.impl\\.koloboke\\.*', 
+//    	'speiger\\.src\\.collections\\.impl\\.java\\.*'
     ]
     humanOutputFile = null
     resultFormat = 'json'
-    warmupIterations = 1
-    iterations = 10
-    timeOnIteration = '1s'
-    warmup = '1s'
+    warmupIterations = 2
+    iterations = 5
+    timeOnIteration = '2s'
+    warmup = '3s'
     fork = 1
     operationsPerInvocation = 5
-    threads = 1
+    threads = 2
 }
 
 // it is possible to tweak the jmhJar task directly
@@ -85,5 +87,5 @@ task splitStatistics(type: JavaExec) {
 	description = 'Splits statistics into each category so it can be merged later'
     classpath = sourceSets.main.runtimeClasspath
     main = 'speiger.src.BenchmarkSplitter'
-    args = ['build/reports/jmh/averageResults.json', 'build/reports/collections']
+    args = ['build/results/jmh/results.json', 'build/reports/collections']
 }

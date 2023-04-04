@@ -44,7 +44,7 @@ compileJava.options.encoding = "UTF-8"
 jmh {
     includes = [
 //		JMH since Java17 doesn't support multiple includes just 1
-		'speiger\\.src\\.collections\\.impl\\.*'
+		'speiger\\.src\\.collections\\.impl\\.*' 
 //    	'speiger\\.src\\.collections\\.impl\\.pc\\.*', 
 //    	'speiger\\.src\\.collections\\.impl\\.fastutil\\.*', 
 //    	'speiger\\.src\\.collections\\.impl\\.eclipse\\.*', 
@@ -60,7 +60,7 @@ jmh {
     warmup = '3s'
     fork = 1
     operationsPerInvocation = 5
-    threads = 2
+    threads = 1
 }
 
 // it is possible to tweak the jmhJar task directly

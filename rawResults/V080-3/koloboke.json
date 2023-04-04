@@ -1,0 +1,3134 @@
+[
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeAddCollectionBenchmarks.addEmptyResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 90.0596382695824,
+			"scoreError": 0.38430234390659823,
+			"scoreConfidence": [
+				89.6753359256758,
+				90.44394061348899
+			],
+			"scorePercentiles": {
+				"0.0": 89.91041399172852,
+				"50.0": 90.08385346550352,
+				"90.0": 90.14721493065481,
+				"95.0": 90.14721493065481,
+				"99.0": 90.14721493065481,
+				"99.9": 90.14721493065481,
+				"99.99": 90.14721493065481,
+				"99.999": 90.14721493065481,
+				"99.9999": 90.14721493065481,
+				"100.0": 90.14721493065481
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					89.91041399172852,
+					90.0127141347133,
+					90.14721493065481,
+					90.14399482531178,
+					90.08385346550352
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeAddCollectionBenchmarks.addEmptyResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 527.3261931784625,
+			"scoreError": 6.020316098761227,
+			"scoreConfidence": [
+				521.3058770797013,
+				533.3465092772237
+			],
+			"scorePercentiles": {
+				"0.0": 524.795178205279,
+				"50.0": 527.5254191690207,
+				"90.0": 528.9832118432719,
+				"95.0": 528.9832118432719,
+				"99.0": 528.9832118432719,
+				"99.9": 528.9832118432719,
+				"99.99": 528.9832118432719,
+				"99.999": 528.9832118432719,
+				"99.9999": 528.9832118432719,
+				"100.0": 528.9832118432719
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					524.795178205279,
+					528.9832118432719,
+					528.0869544605773,
+					527.5254191690207,
+					527.2402022141637
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeAddCollectionBenchmarks.addEmptyResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 7918.705853420596,
+			"scoreError": 154.67244801606242,
+			"scoreConfidence": [
+				7764.033405404533,
+				8073.378301436659
+			],
+			"scorePercentiles": {
+				"0.0": 7855.179182388708,
+				"50.0": 7919.394814961409,
+				"90.0": 7963.829246500546,
+				"95.0": 7963.829246500546,
+				"99.0": 7963.829246500546,
+				"99.9": 7963.829246500546,
+				"99.99": 7963.829246500546,
+				"99.999": 7963.829246500546,
+				"99.9999": 7963.829246500546,
+				"100.0": 7963.829246500546
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					7938.163083677788,
+					7963.829246500546,
+					7919.394814961409,
+					7855.179182388708,
+					7916.962939574535
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeAddCollectionBenchmarks.addResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 34.99978315752301,
+			"scoreError": 0.1754120407900635,
+			"scoreConfidence": [
+				34.82437111673295,
+				35.17519519831308
+			],
+			"scorePercentiles": {
+				"0.0": 34.96982073727992,
+				"50.0": 34.97927362942118,
+				"90.0": 35.078937688130466,
+				"95.0": 35.078937688130466,
+				"99.0": 35.078937688130466,
+				"99.9": 35.078937688130466,
+				"99.99": 35.078937688130466,
+				"99.999": 35.078937688130466,
+				"99.9999": 35.078937688130466,
+				"100.0": 35.078937688130466
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					34.9730831230191,
+					34.97927362942118,
+					35.078937688130466,
+					34.99780060976439,
+					34.96982073727992
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeAddCollectionBenchmarks.addResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 428.4896908515201,
+			"scoreError": 12.205606771161206,
+			"scoreConfidence": [
+				416.28408408035887,
+				440.6952976226813
+			],
+			"scorePercentiles": {
+				"0.0": 426.3037528427813,
+				"50.0": 427.1276443005625,
+				"90.0": 434.04790093157504,
+				"95.0": 434.04790093157504,
+				"99.0": 434.04790093157504,
+				"99.9": 434.04790093157504,
+				"99.99": 434.04790093157504,
+				"99.999": 434.04790093157504,
+				"99.9999": 434.04790093157504,
+				"100.0": 434.04790093157504
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					428.0510352464972,
+					426.3037528427813,
+					426.91812093618444,
+					434.04790093157504,
+					427.1276443005625
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeAddCollectionBenchmarks.addResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 5098.649059374903,
+			"scoreError": 70.18738752862939,
+			"scoreConfidence": [
+				5028.461671846274,
+				5168.836446903532
+			],
+			"scorePercentiles": {
+				"0.0": 5081.290363429151,
+				"50.0": 5091.567789625835,
+				"90.0": 5124.34179724976,
+				"95.0": 5124.34179724976,
+				"99.0": 5124.34179724976,
+				"99.9": 5124.34179724976,
+				"99.99": 5124.34179724976,
+				"99.999": 5124.34179724976,
+				"99.9999": 5124.34179724976,
+				"100.0": 5124.34179724976
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					5110.604173828896,
+					5085.441172740876,
+					5124.34179724976,
+					5081.290363429151,
+					5091.567789625835
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokePutMapBenchmarks.putEmptyResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 125.16859731567308,
+			"scoreError": 0.5553084187985041,
+			"scoreConfidence": [
+				124.61328889687458,
+				125.72390573447159
+			],
+			"scorePercentiles": {
+				"0.0": 125.02872122769328,
+				"50.0": 125.1127462305315,
+				"90.0": 125.40599717096902,
+				"95.0": 125.40599717096902,
+				"99.0": 125.40599717096902,
+				"99.9": 125.40599717096902,
+				"99.99": 125.40599717096902,
+				"99.999": 125.40599717096902,
+				"99.9999": 125.40599717096902,
+				"100.0": 125.40599717096902
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					125.1127462305315,
+					125.10728536597792,
+					125.02872122769328,
+					125.40599717096902,
+					125.18823658319361
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokePutMapBenchmarks.putEmptyResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 987.3262352515983,
+			"scoreError": 6.322116665177985,
+			"scoreConfidence": [
+				981.0041185864203,
+				993.6483519167763
+			],
+			"scorePercentiles": {
+				"0.0": 985.3311307045793,
+				"50.0": 987.5746085143217,
+				"90.0": 989.6255820958909,
+				"95.0": 989.6255820958909,
+				"99.0": 989.6255820958909,
+				"99.9": 989.6255820958909,
+				"99.99": 989.6255820958909,
+				"99.999": 989.6255820958909,
+				"99.9999": 989.6255820958909,
+				"100.0": 989.6255820958909
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					987.5746085143217,
+					986.2434997814846,
+					987.8563551617157,
+					985.3311307045793,
+					989.6255820958909
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokePutMapBenchmarks.putEmptyResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 13600.789591703147,
+			"scoreError": 895.4634077265091,
+			"scoreConfidence": [
+				12705.326183976638,
+				14496.252999429656
+			],
+			"scorePercentiles": {
+				"0.0": 13240.690792729192,
+				"50.0": 13643.142526545058,
+				"90.0": 13804.451635111876,
+				"95.0": 13804.451635111876,
+				"99.0": 13804.451635111876,
+				"99.9": 13804.451635111876,
+				"99.99": 13804.451635111876,
+				"99.999": 13804.451635111876,
+				"99.9999": 13804.451635111876,
+				"100.0": 13804.451635111876
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					13804.451635111876,
+					13240.690792729192,
+					13643.142526545058,
+					13793.598679005127,
+					13522.064325124478
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokePutMapBenchmarks.putResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 57.82673999536987,
+			"scoreError": 29.74676856307334,
+			"scoreConfidence": [
+				28.07997143229653,
+				87.57350855844321
+			],
+			"scorePercentiles": {
+				"0.0": 52.963010852155804,
+				"50.0": 53.30323989749111,
+				"90.0": 70.97977085887295,
+				"95.0": 70.97977085887295,
+				"99.0": 70.97977085887295,
+				"99.9": 70.97977085887295,
+				"99.99": 70.97977085887295,
+				"99.999": 70.97977085887295,
+				"99.9999": 70.97977085887295,
+				"100.0": 70.97977085887295
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					53.30323989749111,
+					53.251213310537196,
+					52.963010852155804,
+					58.63646505779227,
+					70.97977085887295
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokePutMapBenchmarks.putResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 494.448112507923,
+			"scoreError": 9.675911984900242,
+			"scoreConfidence": [
+				484.7722005230227,
+				504.12402449282325
+			],
+			"scorePercentiles": {
+				"0.0": 491.7042826029008,
+				"50.0": 494.83759757021664,
+				"90.0": 497.1773784014764,
+				"95.0": 497.1773784014764,
+				"99.0": 497.1773784014764,
+				"99.9": 497.1773784014764,
+				"99.99": 497.1773784014764,
+				"99.999": 497.1773784014764,
+				"99.9999": 497.1773784014764,
+				"100.0": 497.1773784014764
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					492.01819221029723,
+					491.7042826029008,
+					494.83759757021664,
+					497.1773784014764,
+					496.5031117547243
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokePutMapBenchmarks.putResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 8459.922459726042,
+			"scoreError": 410.39971043076366,
+			"scoreConfidence": [
+				8049.522749295278,
+				8870.322170156805
+			],
+			"scorePercentiles": {
+				"0.0": 8329.56976744186,
+				"50.0": 8465.937539672464,
+				"90.0": 8616.859394121562,
+				"95.0": 8616.859394121562,
+				"99.0": 8616.859394121562,
+				"99.9": 8616.859394121562,
+				"99.99": 8616.859394121562,
+				"99.999": 8616.859394121562,
+				"99.9999": 8616.859394121562,
+				"100.0": 8616.859394121562
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					8483.922896256956,
+					8465.937539672464,
+					8403.322701137366,
+					8329.56976744186,
+					8616.859394121562
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.containsResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 24.448606124590402,
+			"scoreError": 0.10707076539311697,
+			"scoreConfidence": [
+				24.341535359197284,
+				24.55567688998352
+			],
+			"scorePercentiles": {
+				"0.0": 24.41009899257414,
+				"50.0": 24.445465044738395,
+				"90.0": 24.484880357099183,
+				"95.0": 24.484880357099183,
+				"99.0": 24.484880357099183,
+				"99.9": 24.484880357099183,
+				"99.99": 24.484880357099183,
+				"99.999": 24.484880357099183,
+				"99.9999": 24.484880357099183,
+				"100.0": 24.484880357099183
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					24.484880357099183,
+					24.41009899257414,
+					24.445465044738395,
+					24.462906798607232,
+					24.439679429933058
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.containsResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 23.70156978732789,
+			"scoreError": 0.29626297803814344,
+			"scoreConfidence": [
+				23.405306809289748,
+				23.997832765366034
+			],
+			"scorePercentiles": {
+				"0.0": 23.599205941577097,
+				"50.0": 23.733936822191083,
+				"90.0": 23.77138493560174,
+				"95.0": 23.77138493560174,
+				"99.0": 23.77138493560174,
+				"99.9": 23.77138493560174,
+				"99.99": 23.77138493560174,
+				"99.999": 23.77138493560174,
+				"99.9999": 23.77138493560174,
+				"100.0": 23.77138493560174
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					23.761984790520145,
+					23.599205941577097,
+					23.641336446749396,
+					23.733936822191083,
+					23.77138493560174
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.containsResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 25.399144813206526,
+			"scoreError": 0.1200001294700582,
+			"scoreConfidence": [
+				25.27914468373647,
+				25.519144942676583
+			],
+			"scorePercentiles": {
+				"0.0": 25.35886916804393,
+				"50.0": 25.407960934775733,
+				"90.0": 25.438661230275077,
+				"95.0": 25.438661230275077,
+				"99.0": 25.438661230275077,
+				"99.9": 25.438661230275077,
+				"99.99": 25.438661230275077,
+				"99.999": 25.438661230275077,
+				"99.9999": 25.438661230275077,
+				"100.0": 25.438661230275077
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					25.438661230275077,
+					25.407960934775733,
+					25.4123041147687,
+					25.35886916804393,
+					25.37792861816918
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateForEachResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 10.89727113307491,
+			"scoreError": 0.5739993742826321,
+			"scoreConfidence": [
+				10.323271758792277,
+				11.471270507357541
+			],
+			"scorePercentiles": {
+				"0.0": 10.69338048914844,
+				"50.0": 10.858282930677037,
+				"90.0": 11.070469367862477,
+				"95.0": 11.070469367862477,
+				"99.0": 11.070469367862477,
+				"99.9": 11.070469367862477,
+				"99.99": 11.070469367862477,
+				"99.999": 11.070469367862477,
+				"99.9999": 11.070469367862477,
+				"100.0": 11.070469367862477
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					10.850362825760543,
+					11.070469367862477,
+					11.013860051926052,
+					10.69338048914844,
+					10.858282930677037
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateForEachResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 124.9631221094048,
+			"scoreError": 1.4073977290339967,
+			"scoreConfidence": [
+				123.55572438037079,
+				126.3705198384388
+			],
+			"scorePercentiles": {
+				"0.0": 124.6551599974174,
+				"50.0": 124.78894924461571,
+				"90.0": 125.40592407644138,
+				"95.0": 125.40592407644138,
+				"99.0": 125.40592407644138,
+				"99.9": 125.40592407644138,
+				"99.99": 125.40592407644138,
+				"99.999": 125.40592407644138,
+				"99.9999": 125.40592407644138,
+				"100.0": 125.40592407644138
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					125.40592407644138,
+					124.78894924461571,
+					124.65696087012742,
+					124.6551599974174,
+					125.30861635842214
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateForEachResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 1322.033998625347,
+			"scoreError": 7.6031184053224825,
+			"scoreConfidence": [
+				1314.4308802200246,
+				1329.6371170306695
+			],
+			"scorePercentiles": {
+				"0.0": 1319.0923924998604,
+				"50.0": 1322.4825097987766,
+				"90.0": 1323.8584943379892,
+				"95.0": 1323.8584943379892,
+				"99.0": 1323.8584943379892,
+				"99.9": 1323.8584943379892,
+				"99.99": 1323.8584943379892,
+				"99.999": 1323.8584943379892,
+				"99.9999": 1323.8584943379892,
+				"100.0": 1323.8584943379892
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					1323.8584943379892,
+					1319.0923924998604,
+					1322.4825097987766,
+					1323.630872039169,
+					1321.105724450939
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateForLoopResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 21.944636059621075,
+			"scoreError": 0.0826853398715778,
+			"scoreConfidence": [
+				21.861950719749498,
+				22.027321399492653
+			],
+			"scorePercentiles": {
+				"0.0": 21.92010741272825,
+				"50.0": 21.95040810495824,
+				"90.0": 21.9661318087899,
+				"95.0": 21.9661318087899,
+				"99.0": 21.9661318087899,
+				"99.9": 21.9661318087899,
+				"99.99": 21.9661318087899,
+				"99.999": 21.9661318087899,
+				"99.9999": 21.9661318087899,
+				"100.0": 21.9661318087899
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					21.95040810495824,
+					21.96254847014168,
+					21.923984501487322,
+					21.92010741272825,
+					21.9661318087899
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateForLoopResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 190.71261410854655,
+			"scoreError": 2.5333238744873157,
+			"scoreConfidence": [
+				188.17929023405924,
+				193.24593798303385
+			],
+			"scorePercentiles": {
+				"0.0": 190.09244283939236,
+				"50.0": 190.41670104246384,
+				"90.0": 191.66676956933557,
+				"95.0": 191.66676956933557,
+				"99.0": 191.66676956933557,
+				"99.9": 191.66676956933557,
+				"99.99": 191.66676956933557,
+				"99.999": 191.66676956933557,
+				"99.9999": 191.66676956933557,
+				"100.0": 191.66676956933557
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					191.66676956933557,
+					191.11070871897456,
+					190.2764483725664,
+					190.41670104246384,
+					190.09244283939236
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateForLoopResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 2552.738160675868,
+			"scoreError": 22.046467490793376,
+			"scoreConfidence": [
+				2530.6916931850747,
+				2574.7846281666616
+			],
+			"scorePercentiles": {
+				"0.0": 2547.0338886135783,
+				"50.0": 2551.521073818685,
+				"90.0": 2558.8298692281724,
+				"95.0": 2558.8298692281724,
+				"99.0": 2558.8298692281724,
+				"99.9": 2558.8298692281724,
+				"99.99": 2558.8298692281724,
+				"99.999": 2558.8298692281724,
+				"99.9999": 2558.8298692281724,
+				"100.0": 2558.8298692281724
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					2551.521073818685,
+					2558.614103757347,
+					2547.0338886135783,
+					2547.6918679615596,
+					2558.8298692281724
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateStreamResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 24.920639274429817,
+			"scoreError": 0.08901817896572026,
+			"scoreConfidence": [
+				24.831621095464097,
+				25.009657453395537
+			],
+			"scorePercentiles": {
+				"0.0": 24.893989414220517,
+				"50.0": 24.923198697357442,
+				"90.0": 24.951185831095017,
+				"95.0": 24.951185831095017,
+				"99.0": 24.951185831095017,
+				"99.9": 24.951185831095017,
+				"99.99": 24.951185831095017,
+				"99.999": 24.951185831095017,
+				"99.9999": 24.951185831095017,
+				"100.0": 24.951185831095017
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					24.951185831095017,
+					24.902130168390226,
+					24.893989414220517,
+					24.923198697357442,
+					24.932692261085894
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateStreamResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 283.853716223606,
+			"scoreError": 1.0797410721985043,
+			"scoreConfidence": [
+				282.7739751514075,
+				284.9334572958045
+			],
+			"scorePercentiles": {
+				"0.0": 283.47989891118806,
+				"50.0": 283.8098531437602,
+				"90.0": 284.2405282642,
+				"95.0": 284.2405282642,
+				"99.0": 284.2405282642,
+				"99.9": 284.2405282642,
+				"99.99": 284.2405282642,
+				"99.999": 284.2405282642,
+				"99.9999": 284.2405282642,
+				"100.0": 284.2405282642
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					283.76250787555875,
+					284.2405282642,
+					283.47989891118806,
+					283.8098531437602,
+					283.975792923323
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.iterateStreamResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 2776.4929793115443,
+			"scoreError": 10.466823716906596,
+			"scoreConfidence": [
+				2766.0261555946377,
+				2786.959803028451
+			],
+			"scorePercentiles": {
+				"0.0": 2772.3146774494044,
+				"50.0": 2776.461019583894,
+				"90.0": 2779.145986259954,
+				"95.0": 2779.145986259954,
+				"99.0": 2779.145986259954,
+				"99.9": 2779.145986259954,
+				"99.99": 2779.145986259954,
+				"99.999": 2779.145986259954,
+				"99.9999": 2779.145986259954,
+				"100.0": 2779.145986259954
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					2775.8851959150657,
+					2772.3146774494044,
+					2776.461019583894,
+					2779.145986259954,
+					2778.6580173494044
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.toArrayResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 11.810931086813344,
+			"scoreError": 0.2169894918202002,
+			"scoreConfidence": [
+				11.593941594993144,
+				12.027920578633545
+			],
+			"scorePercentiles": {
+				"0.0": 11.753242530993228,
+				"50.0": 11.786790307591705,
+				"90.0": 11.890806871544557,
+				"95.0": 11.890806871544557,
+				"99.0": 11.890806871544557,
+				"99.9": 11.890806871544557,
+				"99.99": 11.890806871544557,
+				"99.999": 11.890806871544557,
+				"99.9999": 11.890806871544557,
+				"100.0": 11.890806871544557
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					11.846614937689488,
+					11.753242530993228,
+					11.890806871544557,
+					11.786790307591705,
+					11.77720078624775
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.toArrayResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 135.3297390499722,
+			"scoreError": 2.228038303998596,
+			"scoreConfidence": [
+				133.1017007459736,
+				137.5577773539708
+			],
+			"scorePercentiles": {
+				"0.0": 134.80702245103996,
+				"50.0": 134.99757092707765,
+				"90.0": 136.1360082935685,
+				"95.0": 136.1360082935685,
+				"99.0": 136.1360082935685,
+				"99.9": 136.1360082935685,
+				"99.99": 136.1360082935685,
+				"99.999": 136.1360082935685,
+				"99.9999": 136.1360082935685,
+				"100.0": 136.1360082935685
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					134.99757092707765,
+					136.1360082935685,
+					135.74414850604148,
+					134.96394507213347,
+					134.80702245103996
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadCollectionBenchmarks.toArrayResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 1600.8618954178978,
+			"scoreError": 2.4122890200846467,
+			"scoreConfidence": [
+				1598.449606397813,
+				1603.2741844379825
+			],
+			"scorePercentiles": {
+				"0.0": 1600.1361457871153,
+				"50.0": 1601.0742401355487,
+				"90.0": 1601.6191229584172,
+				"95.0": 1601.6191229584172,
+				"99.0": 1601.6191229584172,
+				"99.9": 1601.6191229584172,
+				"99.99": 1601.6191229584172,
+				"99.999": 1601.6191229584172,
+				"99.9999": 1601.6191229584172,
+				"100.0": 1601.6191229584172
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					1601.184341207224,
+					1600.2956270011844,
+					1600.1361457871153,
+					1601.6191229584172,
+					1601.0742401355487
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.containsKeyResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 24.425899212906906,
+			"scoreError": 0.22014082257673065,
+			"scoreConfidence": [
+				24.205758390330175,
+				24.646040035483637
+			],
+			"scorePercentiles": {
+				"0.0": 24.366687015467722,
+				"50.0": 24.41533444529876,
+				"90.0": 24.513799251252415,
+				"95.0": 24.513799251252415,
+				"99.0": 24.513799251252415,
+				"99.9": 24.513799251252415,
+				"99.99": 24.513799251252415,
+				"99.999": 24.513799251252415,
+				"99.9999": 24.513799251252415,
+				"100.0": 24.513799251252415
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					24.444813013869073,
+					24.366687015467722,
+					24.41533444529876,
+					24.388862338646554,
+					24.513799251252415
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.containsKeyResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 24.373007849686523,
+			"scoreError": 0.15778865757706304,
+			"scoreConfidence": [
+				24.215219192109462,
+				24.530796507263585
+			],
+			"scorePercentiles": {
+				"0.0": 24.33534868537797,
+				"50.0": 24.354302046073695,
+				"90.0": 24.431312201397684,
+				"95.0": 24.431312201397684,
+				"99.0": 24.431312201397684,
+				"99.9": 24.431312201397684,
+				"99.99": 24.431312201397684,
+				"99.999": 24.431312201397684,
+				"99.9999": 24.431312201397684,
+				"100.0": 24.431312201397684
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					24.431312201397684,
+					24.34422511895413,
+					24.33534868537797,
+					24.399851196629132,
+					24.354302046073695
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.containsKeyResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 25.35716707791766,
+			"scoreError": 0.2553830740148933,
+			"scoreConfidence": [
+				25.101784003902765,
+				25.612550151932552
+			],
+			"scorePercentiles": {
+				"0.0": 25.287999955158785,
+				"50.0": 25.35012320073385,
+				"90.0": 25.440886487659434,
+				"95.0": 25.440886487659434,
+				"99.0": 25.440886487659434,
+				"99.9": 25.440886487659434,
+				"99.99": 25.440886487659434,
+				"99.999": 25.440886487659434,
+				"99.9999": 25.440886487659434,
+				"100.0": 25.440886487659434
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					25.299916667818188,
+					25.287999955158785,
+					25.406909078218014,
+					25.440886487659434,
+					25.35012320073385
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.forEachResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 11.945069680031192,
+			"scoreError": 0.21125768416579688,
+			"scoreConfidence": [
+				11.733811995865395,
+				12.15632736419699
+			],
+			"scorePercentiles": {
+				"0.0": 11.868739891324573,
+				"50.0": 11.955300193921355,
+				"90.0": 11.999921082494302,
+				"95.0": 11.999921082494302,
+				"99.0": 11.999921082494302,
+				"99.9": 11.999921082494302,
+				"99.99": 11.999921082494302,
+				"99.999": 11.999921082494302,
+				"99.9999": 11.999921082494302,
+				"100.0": 11.999921082494302
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					11.989661162143053,
+					11.911726070272676,
+					11.868739891324573,
+					11.999921082494302,
+					11.955300193921355
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.forEachResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 130.7096572567853,
+			"scoreError": 1.2091898642670993,
+			"scoreConfidence": [
+				129.5004673925182,
+				131.9188471210524
+			],
+			"scorePercentiles": {
+				"0.0": 130.4851128041166,
+				"50.0": 130.5731092289509,
+				"90.0": 131.23896167448896,
+				"95.0": 131.23896167448896,
+				"99.0": 131.23896167448896,
+				"99.9": 131.23896167448896,
+				"99.99": 131.23896167448896,
+				"99.999": 131.23896167448896,
+				"99.9999": 131.23896167448896,
+				"100.0": 131.23896167448896
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					130.50092218813938,
+					130.75018038823066,
+					130.5731092289509,
+					131.23896167448896,
+					130.4851128041166
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.forEachResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 1395.0889571423058,
+			"scoreError": 21.57561413994717,
+			"scoreConfidence": [
+				1373.5133430023586,
+				1416.664571282253
+			],
+			"scorePercentiles": {
+				"0.0": 1388.9112579295825,
+				"50.0": 1394.3039825513752,
+				"90.0": 1401.5876856799173,
+				"95.0": 1401.5876856799173,
+				"99.0": 1401.5876856799173,
+				"99.9": 1401.5876856799173,
+				"99.99": 1401.5876856799173,
+				"99.999": 1401.5876856799173,
+				"99.9999": 1401.5876856799173,
+				"100.0": 1401.5876856799173
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					1401.5876856799173,
+					1400.0357202656694,
+					1390.606139284985,
+					1394.3039825513752,
+					1388.9112579295825
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.getOrDefaultResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 28.707741855173072,
+			"scoreError": 0.18148209891188655,
+			"scoreConfidence": [
+				28.526259756261187,
+				28.889223954084958
+			],
+			"scorePercentiles": {
+				"0.0": 28.655185768483676,
+				"50.0": 28.697377643168817,
+				"90.0": 28.771400815953484,
+				"95.0": 28.771400815953484,
+				"99.0": 28.771400815953484,
+				"99.9": 28.771400815953484,
+				"99.99": 28.771400815953484,
+				"99.999": 28.771400815953484,
+				"99.9999": 28.771400815953484,
+				"100.0": 28.771400815953484
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					28.738699627516837,
+					28.676045420742522,
+					28.697377643168817,
+					28.655185768483676,
+					28.771400815953484
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.getOrDefaultResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 26.870670439467613,
+			"scoreError": 0.09998404351797709,
+			"scoreConfidence": [
+				26.770686395949635,
+				26.97065448298559
+			],
+			"scorePercentiles": {
+				"0.0": 26.837557850570764,
+				"50.0": 26.88486791853204,
+				"90.0": 26.89636715501796,
+				"95.0": 26.89636715501796,
+				"99.0": 26.89636715501796,
+				"99.9": 26.89636715501796,
+				"99.99": 26.89636715501796,
+				"99.999": 26.89636715501796,
+				"99.9999": 26.89636715501796,
+				"100.0": 26.89636715501796
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					26.837557850570764,
+					26.886194029850746,
+					26.89636715501796,
+					26.88486791853204,
+					26.84836524336657
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.getOrDefaultResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 29.63307859298093,
+			"scoreError": 0.23667292132359202,
+			"scoreConfidence": [
+				29.396405671657337,
+				29.86975151430452
+			],
+			"scorePercentiles": {
+				"0.0": 29.536562392356707,
+				"50.0": 29.658033449546878,
+				"90.0": 29.681413035328326,
+				"95.0": 29.681413035328326,
+				"99.0": 29.681413035328326,
+				"99.9": 29.681413035328326,
+				"99.99": 29.681413035328326,
+				"99.999": 29.681413035328326,
+				"99.9999": 29.681413035328326,
+				"100.0": 29.681413035328326
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					29.680516743131115,
+					29.608867344541608,
+					29.536562392356707,
+					29.681413035328326,
+					29.658033449546878
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.getResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 28.970970981183775,
+			"scoreError": 0.1253196629930618,
+			"scoreConfidence": [
+				28.845651318190715,
+				29.096290644176836
+			],
+			"scorePercentiles": {
+				"0.0": 28.940203352280495,
+				"50.0": 28.96141927485711,
+				"90.0": 29.023207674934415,
+				"95.0": 29.023207674934415,
+				"99.0": 29.023207674934415,
+				"99.9": 29.023207674934415,
+				"99.99": 29.023207674934415,
+				"99.999": 29.023207674934415,
+				"99.9999": 29.023207674934415,
+				"100.0": 29.023207674934415
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					28.96141927485711,
+					28.940203352280495,
+					28.979139810233374,
+					29.023207674934415,
+					28.95088479361348
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.getResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 26.718435227358718,
+			"scoreError": 0.2258456538329884,
+			"scoreConfidence": [
+				26.49258957352573,
+				26.944280881191705
+			],
+			"scorePercentiles": {
+				"0.0": 26.614058029200084,
+				"50.0": 26.74204091720906,
+				"90.0": 26.754625030754244,
+				"95.0": 26.754625030754244,
+				"99.0": 26.754625030754244,
+				"99.9": 26.754625030754244,
+				"99.99": 26.754625030754244,
+				"99.999": 26.754625030754244,
+				"99.9999": 26.754625030754244,
+				"100.0": 26.754625030754244
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					26.742251251777297,
+					26.739200907852904,
+					26.754625030754244,
+					26.614058029200084,
+					26.74204091720906
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.getResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 29.39017892535727,
+			"scoreError": 0.1888204342031998,
+			"scoreConfidence": [
+				29.201358491154068,
+				29.57899935956047
+			],
+			"scorePercentiles": {
+				"0.0": 29.32594769684757,
+				"50.0": 29.398039963129637,
+				"90.0": 29.439442154773786,
+				"95.0": 29.439442154773786,
+				"99.0": 29.439442154773786,
+				"99.9": 29.439442154773786,
+				"99.99": 29.439442154773786,
+				"99.999": 29.439442154773786,
+				"99.9999": 29.439442154773786,
+				"100.0": 29.439442154773786
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					29.355141107332535,
+					29.398039963129637,
+					29.432323704702817,
+					29.439442154773786,
+					29.32594769684757
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.keySetResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 17.975869838487625,
+			"scoreError": 0.1329144746900363,
+			"scoreConfidence": [
+				17.84295536379759,
+				18.10878431317766
+			],
+			"scorePercentiles": {
+				"0.0": 17.927580314035875,
+				"50.0": 17.99099438535406,
+				"90.0": 18.014447006014937,
+				"95.0": 18.014447006014937,
+				"99.0": 18.014447006014937,
+				"99.9": 18.014447006014937,
+				"99.99": 18.014447006014937,
+				"99.999": 18.014447006014937,
+				"99.9999": 18.014447006014937,
+				"100.0": 18.014447006014937
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					17.99099438535406,
+					17.954424102841823,
+					17.991903384191424,
+					18.014447006014937,
+					17.927580314035875
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.keySetResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 203.3826874228162,
+			"scoreError": 21.132579357890382,
+			"scoreConfidence": [
+				182.2501080649258,
+				224.51526678070658
+			],
+			"scorePercentiles": {
+				"0.0": 198.76933813430344,
+				"50.0": 200.83015735293014,
+				"90.0": 211.76220672262784,
+				"95.0": 211.76220672262784,
+				"99.0": 211.76220672262784,
+				"99.9": 211.76220672262784,
+				"99.99": 211.76220672262784,
+				"99.999": 211.76220672262784,
+				"99.9999": 211.76220672262784,
+				"100.0": 211.76220672262784
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					198.76933813430344,
+					199.4800998006275,
+					200.83015735293014,
+					206.07163510359192,
+					211.76220672262784
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.keySetResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 2537.4543909303757,
+			"scoreError": 16.281755571688723,
+			"scoreConfidence": [
+				2521.172635358687,
+				2553.7361465020645
+			],
+			"scorePercentiles": {
+				"0.0": 2533.423374980231,
+				"50.0": 2537.0983604485064,
+				"90.0": 2543.6903215998277,
+				"95.0": 2543.6903215998277,
+				"99.0": 2543.6903215998277,
+				"99.9": 2543.6903215998277,
+				"99.99": 2543.6903215998277,
+				"99.999": 2543.6903215998277,
+				"99.9999": 2543.6903215998277,
+				"100.0": 2543.6903215998277
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					2533.423374980231,
+					2543.6903215998277,
+					2537.0983604485064,
+					2539.2265116572944,
+					2533.83338596602
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.valuesResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 17.528761542006997,
+			"scoreError": 0.20219313266734967,
+			"scoreConfidence": [
+				17.326568409339647,
+				17.730954674674347
+			],
+			"scorePercentiles": {
+				"0.0": 17.48815830069438,
+				"50.0": 17.515698912435163,
+				"90.0": 17.619963123457246,
+				"95.0": 17.619963123457246,
+				"99.0": 17.619963123457246,
+				"99.9": 17.619963123457246,
+				"99.99": 17.619963123457246,
+				"99.999": 17.619963123457246,
+				"99.9999": 17.619963123457246,
+				"100.0": 17.619963123457246
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					17.619963123457246,
+					17.515698912435163,
+					17.519670867423592,
+					17.48815830069438,
+					17.5003165060246
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.valuesResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 206.42372022027408,
+			"scoreError": 1.1164512982688586,
+			"scoreConfidence": [
+				205.30726892200522,
+				207.54017151854293
+			],
+			"scorePercentiles": {
+				"0.0": 205.97277945568152,
+				"50.0": 206.43654277958376,
+				"90.0": 206.77980076991656,
+				"95.0": 206.77980076991656,
+				"99.0": 206.77980076991656,
+				"99.9": 206.77980076991656,
+				"99.99": 206.77980076991656,
+				"99.999": 206.77980076991656,
+				"99.9999": 206.77980076991656,
+				"100.0": 206.77980076991656
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					206.4287687476047,
+					206.50070934858368,
+					206.43654277958376,
+					206.77980076991656,
+					205.97277945568152
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeReadMapBenchmarks.valuesResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 1810.9259322831062,
+			"scoreError": 12.099550684892975,
+			"scoreConfidence": [
+				1798.8263815982132,
+				1823.0254829679993
+			],
+			"scorePercentiles": {
+				"0.0": 1807.8172277343874,
+				"50.0": 1810.5617622924951,
+				"90.0": 1815.937146323576,
+				"95.0": 1815.937146323576,
+				"99.0": 1815.937146323576,
+				"99.9": 1815.937146323576,
+				"99.99": 1815.937146323576,
+				"99.999": 1815.937146323576,
+				"99.9999": 1815.937146323576,
+				"100.0": 1815.937146323576
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					1810.5617622924951,
+					1815.937146323576,
+					1808.8525609541791,
+					1811.460964110893,
+					1807.8172277343874
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveCollectionBenchmarks.removeResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 22.2605464528554,
+			"scoreError": 0.2399347490218229,
+			"scoreConfidence": [
+				22.020611703833577,
+				22.500481201877225
+			],
+			"scorePercentiles": {
+				"0.0": 22.15147167618102,
+				"50.0": 22.28430051562409,
+				"90.0": 22.30850851245901,
+				"95.0": 22.30850851245901,
+				"99.0": 22.30850851245901,
+				"99.9": 22.30850851245901,
+				"99.99": 22.30850851245901,
+				"99.999": 22.30850851245901,
+				"99.9999": 22.30850851245901,
+				"100.0": 22.30850851245901
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					22.27328717528583,
+					22.30850851245901,
+					22.15147167618102,
+					22.285164384727047,
+					22.28430051562409
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveCollectionBenchmarks.removeResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 34.20216974572288,
+			"scoreError": 3.0235771860226035,
+			"scoreConfidence": [
+				31.178592559700274,
+				37.22574693174548
+			],
+			"scorePercentiles": {
+				"0.0": 33.792011022069076,
+				"50.0": 33.88550233321135,
+				"90.0": 35.60470554373821,
+				"95.0": 35.60470554373821,
+				"99.0": 35.60470554373821,
+				"99.9": 35.60470554373821,
+				"99.99": 35.60470554373821,
+				"99.999": 35.60470554373821,
+				"99.9999": 35.60470554373821,
+				"100.0": 35.60470554373821
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					33.89847209466806,
+					33.83015773492769,
+					33.792011022069076,
+					35.60470554373821,
+					33.88550233321135
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveCollectionBenchmarks.removeResultHashSet",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 30.041680646877666,
+			"scoreError": 0.5014739077902145,
+			"scoreConfidence": [
+				29.540206739087452,
+				30.54315455466788
+			],
+			"scorePercentiles": {
+				"0.0": 29.88858352521726,
+				"50.0": 30.006922154843323,
+				"90.0": 30.232456785680064,
+				"95.0": 30.232456785680064,
+				"99.0": 30.232456785680064,
+				"99.9": 30.232456785680064,
+				"99.99": 30.232456785680064,
+				"99.999": 30.232456785680064,
+				"99.9999": 30.232456785680064,
+				"100.0": 30.232456785680064
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					29.88858352521726,
+					29.981936762743985,
+					30.098504005903692,
+					30.006922154843323,
+					30.232456785680064
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveMapsBenchmarks.removeResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 26.915368633429683,
+			"scoreError": 0.1789464799773397,
+			"scoreConfidence": [
+				26.73642215345234,
+				27.094315113407024
+			],
+			"scorePercentiles": {
+				"0.0": 26.86369118371863,
+				"50.0": 26.911275900687368,
+				"90.0": 26.983387583167204,
+				"95.0": 26.983387583167204,
+				"99.0": 26.983387583167204,
+				"99.9": 26.983387583167204,
+				"99.99": 26.983387583167204,
+				"99.999": 26.983387583167204,
+				"99.9999": 26.983387583167204,
+				"100.0": 26.983387583167204
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					26.884248030568475,
+					26.911275900687368,
+					26.86369118371863,
+					26.983387583167204,
+					26.93424046900673
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveMapsBenchmarks.removeResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 28.756799174699427,
+			"scoreError": 0.18409162837243712,
+			"scoreConfidence": [
+				28.572707546326992,
+				28.940890803071863
+			],
+			"scorePercentiles": {
+				"0.0": 28.67892084189562,
+				"50.0": 28.778121262461575,
+				"90.0": 28.800102558588424,
+				"95.0": 28.800102558588424,
+				"99.0": 28.800102558588424,
+				"99.9": 28.800102558588424,
+				"99.99": 28.800102558588424,
+				"99.999": 28.800102558588424,
+				"99.9999": 28.800102558588424,
+				"100.0": 28.800102558588424
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					28.67892084189562,
+					28.74526306962033,
+					28.778121262461575,
+					28.800102558588424,
+					28.78158814093119
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveMapsBenchmarks.removeResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 32.52947115319249,
+			"scoreError": 0.1570279491311754,
+			"scoreConfidence": [
+				32.37244320406131,
+				32.686499102323666
+			],
+			"scorePercentiles": {
+				"0.0": 32.47755540635426,
+				"50.0": 32.52870488188767,
+				"90.0": 32.581216754828255,
+				"95.0": 32.581216754828255,
+				"99.0": 32.581216754828255,
+				"99.9": 32.581216754828255,
+				"99.99": 32.581216754828255,
+				"99.999": 32.581216754828255,
+				"99.9999": 32.581216754828255,
+				"100.0": 32.581216754828255
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					32.555218255026766,
+					32.581216754828255,
+					32.504660467865506,
+					32.52870488188767,
+					32.47755540635426
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveMapsBenchmarks.replaceResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "100"
+		},
+		"primaryMetric": {
+			"score": 32.22457394508767,
+			"scoreError": 0.3263075548075592,
+			"scoreConfidence": [
+				31.89826639028011,
+				32.550881499895226
+			],
+			"scorePercentiles": {
+				"0.0": 32.14746902897901,
+				"50.0": 32.203641569120244,
+				"90.0": 32.34276408704564,
+				"95.0": 32.34276408704564,
+				"99.0": 32.34276408704564,
+				"99.9": 32.34276408704564,
+				"99.99": 32.34276408704564,
+				"99.999": 32.34276408704564,
+				"99.9999": 32.34276408704564,
+				"100.0": 32.34276408704564
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					32.203641569120244,
+					32.15058796775986,
+					32.14746902897901,
+					32.34276408704564,
+					32.27840707253365
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveMapsBenchmarks.replaceResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "1000"
+		},
+		"primaryMetric": {
+			"score": 35.33853165515002,
+			"scoreError": 0.444465038875217,
+			"scoreConfidence": [
+				34.894066616274806,
+				35.782996694025236
+			],
+			"scorePercentiles": {
+				"0.0": 35.21959474568611,
+				"50.0": 35.30152554718571,
+				"90.0": 35.498730154567845,
+				"95.0": 35.498730154567845,
+				"99.0": 35.498730154567845,
+				"99.9": 35.498730154567845,
+				"99.99": 35.498730154567845,
+				"99.999": 35.498730154567845,
+				"99.9999": 35.498730154567845,
+				"100.0": 35.498730154567845
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					35.41420088907547,
+					35.498730154567845,
+					35.258606939234966,
+					35.30152554718571,
+					35.21959474568611
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	},
+	{
+		"jmhVersion": "1.35",
+		"benchmark": "speiger.src.collections.impl.koloboke.KolobokeRemoveMapsBenchmarks.replaceResultHashMap",
+		"mode": "avgt",
+		"threads": 1,
+		"forks": 1,
+		"jvm": "C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe",
+		"jvmArgs": [
+			"-Dfile.encoding=windows-1252",
+			"-Djava.io.tmpdir=D:\\Game-Project\\Primitive-Collections-Benchmarks\\build\\tmp\\jmh",
+			"-Duser.country=DE",
+			"-Duser.language=de",
+			"-Duser.variant"
+		],
+		"jdkVersion": "17.0.2",
+		"vmName": "Java HotSpot(TM) 64-Bit Server VM",
+		"vmVersion": "17.0.2+8-LTS-86",
+		"warmupIterations": 2,
+		"warmupTime": "3 s",
+		"warmupBatchSize": 1,
+		"measurementIterations": 5,
+		"measurementTime": "2 s",
+		"measurementBatchSize": 1000,
+		"params": {
+			"setSize": "10000"
+		},
+		"primaryMetric": {
+			"score": 34.04396834131518,
+			"scoreError": 8.523333880289146,
+			"scoreConfidence": [
+				25.520634461026035,
+				42.56730222160432
+			],
+			"scorePercentiles": {
+				"0.0": 32.97125970623399,
+				"50.0": 33.0728361760145,
+				"90.0": 38.00001628498573,
+				"95.0": 38.00001628498573,
+				"99.0": 38.00001628498573,
+				"99.9": 38.00001628498573,
+				"99.99": 38.00001628498573,
+				"99.999": 38.00001628498573,
+				"99.9999": 38.00001628498573,
+				"100.0": 38.00001628498573
+			},
+			"scoreUnit": "us/op",
+			"rawData": [
+				[
+					32.97464268482894,
+					32.97125970623399,
+					33.0728361760145,
+					38.00001628498573,
+					33.201086854512695
+				]
+			]
+		},
+		"secondaryMetrics": {}
+	}
+]
